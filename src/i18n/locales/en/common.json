@@ -1,0 +1,13 @@
+{
+  "welcome": "Welcome,",
+  "button": {
+    "login": "Log In",
+    "logout": "Log out",
+    "signup": "Sign Up",
+    "signup-google": "Sign up with Google",
+    "login-google": "Login with Google",
+    "send-invites": "Send Invites",
+    "get-started": "Get Started",
+    "next": "Next"
+  }
+}

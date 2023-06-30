@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "required": "{{fieldName}} is required",
+    "password-not-matching": "The two passwords that you entered do not match!",
+    "accept-agreement": "Should accept agreement",
+    "password-len": "Password should be minimum {{len}} characters",
+    "email-invalid": "Entered email is not valid",
+    "inputs-round-end-date": "Date should be later than Round Start Date",
+    "inputs-round-start-date": "Date should be earlier than Round End Date",
+    "max-len": "{{fieldName}} cannot include more than {{len}} characters",
+    "email-not-found": "Email not found!",
+    "field-required": "{{field}} is required!"
+  }
+}
