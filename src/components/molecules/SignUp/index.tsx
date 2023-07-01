@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 
@@ -9,7 +10,7 @@ interface SignUpFormProps {
 
 const SignUpForm: React.FC<SignUpFormProps> = ({
   onSubmit,
-  isLoading = false,
+  isLoading = false
 }) => {
   const [form] = useForm();
 

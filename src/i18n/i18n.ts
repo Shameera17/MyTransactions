@@ -1,6 +1,7 @@
 import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
+
 // english translations
 import * as enCommon from "./locales/en/common.json";
 import * as enGlossary from "./locales/en/glossary.json";
@@ -14,13 +15,13 @@ export const resources = {
   en: {
     common: enCommon,
     glossary: enGlossary,
-    validations: enValidations,
+    validations: enValidations
   },
   sin: {
     common: sinCommon,
     glossary: sinGlossary,
-    validations: sinValidations,
-  },
+    validations: sinValidations
+  }
 } as const;
 
 export const defaultNS = "common";
@@ -36,7 +37,7 @@ i18next
       fallbackNS: "common",
       ns: ["common", "glossary", "validations"],
       resources,
-      returnEmptyString: false,
+      returnEmptyString: false
     },
     (err, t) => {
       i18next.t("welcome"); // key in moduleA namespace (defined default)

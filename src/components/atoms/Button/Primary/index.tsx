@@ -1,6 +1,6 @@
 import React from "react";
+
 import { Button } from "antd";
-import { useTranslation } from "react-i18next";
 
 interface PrimaryButtonProps {
   onClick: () => void;
@@ -11,7 +11,7 @@ interface PrimaryButtonProps {
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   onClick,
   disabled = false,
-  buttonName,
+  buttonName
 }) => {
   return (
     <Button type="primary" onClick={onClick} disabled={disabled}>

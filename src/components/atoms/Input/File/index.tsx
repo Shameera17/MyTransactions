@@ -1,7 +1,8 @@
 import React from "react";
+
+import { UploadOutlined } from "@ant-design/icons";
 import { Form, Upload } from "antd";
 import { Rule } from "antd/lib/form";
-import { UploadOutlined } from "@ant-design/icons";
 
 interface FileInputProps {
   name: string;
@@ -15,7 +16,7 @@ const FileInput: React.FC<FileInputProps> = ({ name, label, rules }) => {
     return true;
   };
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` },
+    { required: true, message: `${label} is required` }
   ];
   return (
     <Form.Item
@@ -23,7 +24,7 @@ const FileInput: React.FC<FileInputProps> = ({ name, label, rules }) => {
       name={name}
       rules={rules?.length ? [...initialRules, ...rules] : initialRules}
       valuePropName="fileList"
-      getValueFromEvent={(e) => e.fileList}
+      getValueFromEvent={e => e.fileList}
     >
       <Upload beforeUpload={beforeUpload} multiple={false}>
         <span>

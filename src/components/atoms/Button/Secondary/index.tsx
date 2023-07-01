@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Button } from "antd";
 
 interface SecondaryButtonProps {
@@ -10,7 +11,7 @@ interface SecondaryButtonProps {
 const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   onClick,
   disabled = false,
-  buttonName,
+  buttonName
 }) => {
   return (
     <Button className="" onClick={onClick} disabled={disabled}>

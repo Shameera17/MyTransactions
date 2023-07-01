@@ -1,3 +1,3 @@
 export interface Test {
-type:string
+  type: string;
 }

@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
+
 import { Text } from "../../atoms";
 
 interface LoginFormProps {
@@ -10,7 +12,7 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = ({
   onSubmit,
-  isLoading = false,
+  isLoading = false
 }) => {
   const [form] = useForm();
 

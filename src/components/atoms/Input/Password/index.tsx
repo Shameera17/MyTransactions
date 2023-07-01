@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Form, Input } from "antd";
 import { Rule } from "antd/lib/form";
 
@@ -10,7 +11,7 @@ interface PasswordProps {
 
 const Password: React.FC<PasswordProps> = ({ name, label, rules }) => {
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` },
+    { required: true, message: `${label} is required` }
   ];
   return (
     <Form.Item

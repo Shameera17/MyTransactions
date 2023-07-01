@@ -1,6 +1,8 @@
 import React from "react";
-import "./App.css";
+
 import { useTranslation } from "react-i18next";
+
+import "./App.css";
 import { Text } from "./components/atoms";
 import Routes from "./routes";
 

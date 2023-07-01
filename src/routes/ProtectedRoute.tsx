@@ -1,10 +1,8 @@
 // check whether user has logged in
-import React from 'react'
+import React from "react";
 
 const ProtectedRoute = () => {
-  return (
-    <div>ProtectedRoute</div>
-  )
-}
+  return <div>ProtectedRoute</div>;
+};
 
-export default ProtectedRoute
+export default ProtectedRoute;
