@@ -13,7 +13,6 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   disabled = false,
   buttonName,
 }) => {
-  const { t } = useTranslation();
   return (
     <Button type="primary" onClick={onClick} disabled={disabled}>
       {buttonName}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
-import { Text } from "components/atoms";
+import { Text } from "../../atoms";
 
 interface LoginFormProps {
   onSubmit: (values: any) => void;

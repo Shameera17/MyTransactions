@@ -32,8 +32,7 @@ i18next
     {
       returnNull: false,
       debug: true,
-      // defaultNS,
-      lng: "en",
+      defaultNS,
       fallbackNS: "common",
       ns: ["common", "glossary", "validations"],
       resources,
@@ -46,8 +45,5 @@ i18next
       i18next.t("welcome", { ns: "common" });
     }
   );
-
-// const t = i18n.t.bind(i18n);
-// export { t };
 
 export default i18next;
