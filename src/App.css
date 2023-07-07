@@ -2,3 +2,17 @@
   height: "100%";
   width: "100%";
 }
+.ant-menu > .ant-menu-item {
+  background-color: #d9d9d94d;
+}
+/* .ant-menu > .ant-menu-item:hover,
+.ant-menu > .ant-menu-submenu:hover, */
+.ant-menu > .ant-menu-item-active,
+.ant-menu > .ant-menu-submenu-active,
+/* .ant-menu > .ant-menu-item-open,
+.ant-menu > .ant-menu-submenu-open, */
+.ant-menu > .ant-menu-item-selected,
+.ant-menu > .ant-menu-submenu-selected {
+  color: #157afe;
+  background-color: #c9e0ff;
+}

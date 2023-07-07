@@ -1,17 +1,16 @@
-import React from "react";
-
 import { Layout } from "antd";
 
-import SiderMenu from "../../molecules/Menu/SiderMenu";
+import { PrimaryButton } from "components/atoms";
+import SiderMenu from "components/molecules/Menu/SiderMenu";
 
 const SideBar = () => {
   const { Sider } = Layout;
   return (
     <Sider
       id="Sider"
+      className=" px-6 pt-5 border-r-2 border-lightBlue"
       style={{
         overflow: "auto",
-        height: "200vh",
         position: "absolute",
         left: 0,
         top: 0,
@@ -19,8 +18,27 @@ const SideBar = () => {
         backgroundColor: "white"
       }}
     >
-      <div className="demo-logo-vertical" />
+      {/* logo */}
+      <div className="demo-logo-vertical p-1 ">
+        <span className=" text-crayola font-medium">Expense</span>
+        <span className="font-medium ">Tracker</span>
+      </div>
+      {/* logged user */}
+      <div className="logged-user-vertical" />
+      {/* create transaction */}
+      <div className="add-expense-button p-1 my-6">
+        <PrimaryButton
+          className=" w-full "
+          onClick={function (): void {}}
+          buttonName={"Add New"}
+        />
+      </div>
+      {/* menu control */}
       <SiderMenu />
+      {/* version */}
+      <div className="version-tag flex justify-center  align-bottom text-grayDark">
+        v 1.0.0
+      </div>
     </Sider>
   );
 };

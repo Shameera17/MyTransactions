@@ -1,9 +1,6 @@
-import React from "react";
-
 import { useTranslation } from "react-i18next";
 
 import "./App.css";
-import { Text } from "./components/atoms";
 import Routes from "./routes";
 
 function App() {
@@ -13,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <Routes />
     </div>
   );

@@ -6,14 +6,18 @@ import FileInput from "./Input/File";
 import Password from "./Input/Password";
 import Text from "./Input/Text";
 import TextArea from "./Input/TextArea";
+import MenuWrapperItem from "./Menu/Item";
+import MenuWrapper from "./Menu/Wrapper";
 
 export {
-  PrimaryButton,
-  SecondaryButton,
   Date,
   Email,
   FileInput,
+  MenuWrapper,
+  MenuWrapperItem,
   Password,
+  PrimaryButton,
+  SecondaryButton,
   Text,
   TextArea
 };

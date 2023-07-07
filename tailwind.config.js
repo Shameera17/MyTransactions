@@ -9,7 +9,7 @@ module.exports = {
       laptop: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      desktop: "1280px",
+      desktop: "1280px"
       // => @media (min-width: 1280px) { ... }
     },
     colors: {
@@ -23,8 +23,10 @@ module.exports = {
       successLight: "#4CAF5040",
       idle: "#C9E0FF",
       gray: "#D9D9D94D",
-    },
+      grayDark: "#D9D9D9",
+      lightBlue: "#C9E0FF40"
+    }
   },
 
-  plugins: [],
+  plugins: []
 };

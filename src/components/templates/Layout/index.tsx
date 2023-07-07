@@ -3,26 +3,23 @@ import React from "react";
 import { Layout as Wrapper } from "antd";
 import { Outlet } from "react-router-dom";
 
-import SideBar from "../../organisms/SideBar";
+import { HeaderContent, SideBar } from "components/organisms";
 
-const { Header, Content, Footer, Sider } = Wrapper;
+const { Header, Content, Footer } = Wrapper;
 
 const Layout: React.FC = () => {
   return (
     <Wrapper id="wrapper" hasSider className=" h-screen">
       <SideBar />
-      <Wrapper className="site-layout" style={{ marginLeft: 200 }}>
-        <Header style={{ padding: 0, background: " lightBlue" }} />
+      <Wrapper
+        className="site-layout px-6 pt-8 bg-white"
+        style={{ marginLeft: 200 }}
+      >
+        <Header className=" bg-white mx-4 h-8 " style={{ padding: 0 }}>
+          <HeaderContent />
+        </Header>
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
-          <div
-            style={{
-              padding: 24,
-              textAlign: "center",
-              background: " lightBlue"
-            }}
-          >
-            <Outlet />
-          </div>
+          <Outlet />
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2023 Created by Ant UED

@@ -1,18 +1,19 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import About from "../components/pages/About";
-import Home from "../components/pages/Home";
-import Layout from "../components/templates/Layout";
+import Dashboard from "components/pages/Dashboard";
+import PageNotFound from "components/pages/PageNotFound";
+import Settings from "components/pages/Settings";
+import Layout from "components/templates/Layout";
 
 const Routes = () => {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/app",
       element: <Layout />,
-      errorElement: undefined, //<ErrorPage />,
+      errorElement: <PageNotFound />, //<ErrorPage />,
       children: [
-        { path: "", element: <Home /> },
-        { path: "about", element: <About /> }
+        { path: "dashboard", element: <Dashboard /> },
+        { path: "settings", element: <Settings /> }
       ]
     }
   ]);

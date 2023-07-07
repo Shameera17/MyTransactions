@@ -6,15 +6,22 @@ interface PrimaryButtonProps {
   onClick: () => void;
   disabled?: boolean;
   buttonName: string;
+  className?: string;
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   onClick,
   disabled = false,
-  buttonName
+  buttonName,
+  className
 }) => {
   return (
-    <Button type="primary" onClick={onClick} disabled={disabled}>
+    <Button
+      type="primary"
+      className={` bg-crayola text-white ${className}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {buttonName}
     </Button>
   );

@@ -1,5 +1,5 @@
 {
-  "welcome": "Welcome,",
+  "welcome": "Welcome",
   "button": {
     "login": "Log In",
     "logout": "Log out",
@@ -9,5 +9,9 @@
     "send-invites": "Send Invites",
     "get-started": "Get Started",
     "next": "Next"
+  },
+  "label": {
+    "settings": "Settings",
+    "dashboard": "Dashboard"
   }
 }
