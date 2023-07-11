@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 
 const { Header, Footer, Content } = Layout;
 const screenStyle: React.CSSProperties = {
-  padding: "0 136px",
   paddingTop: "32px",
   backgroundColor: "white"
 };
@@ -41,7 +40,10 @@ const footerStyle: React.CSSProperties = {
 };
 const OtherLayout = () => {
   return (
-    <Layout className=" h-screen" style={screenStyle}>
+    <Layout
+      className=" h-screen tablet:px-8 laptop:px-32 desktop:px-32"
+      style={screenStyle}
+    >
       <Header style={headerStyle}>
         <div className="demo-logo-vertical p-1 ">
           <span style={fontStyle} className=" text-crayola font-medium">

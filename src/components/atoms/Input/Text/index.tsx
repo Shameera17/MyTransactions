@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
-import { Form, FormInstance, Input } from "antd";
+import { Form, Input } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 import { Rule } from "antd/es/form";
 
@@ -26,7 +26,7 @@ const Text: FC<TextProps> = ({ name, label, rules, size, status }) => {
       }
     >
       <Input
-        className=" border-cyan-500"
+        className=" border-cyan-500 "
         status={status}
         placeholder={label}
         size={size}

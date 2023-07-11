@@ -13,7 +13,7 @@
   },
   "form": {
     "first-Name": "මුල් නම",
-    "llast-Name": "අවසන් නම",
+    "last-Name": "අවසන් නම",
     "email": "විද්යුත් තැපෑල",
     "password": "මුරපදය",
     "confirm-password": "මුරපදය තහවුරු කරන්න",

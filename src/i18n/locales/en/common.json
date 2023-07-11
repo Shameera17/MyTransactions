@@ -13,8 +13,8 @@
   },
   "form": {
     "first-Name": "First Name",
-    "llast-Name": "Last Name",
-    "email": "Emai",
+    "last-Name": "Last Name",
+    "email": "Email",
     "password": "Password",
     "confirm-password": "Confirm Password",
     "current-password": "Current Password",

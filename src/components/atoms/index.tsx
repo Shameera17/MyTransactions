@@ -8,9 +8,12 @@ import Text from "./Input/Text";
 import TextArea from "./Input/TextArea";
 import MenuWrapperItem from "./Menu/Item";
 import MenuWrapper from "./Menu/Wrapper";
+import Description from "./Typography/Description";
+import Title from "./Typography/Title";
 
 export {
   Date,
+  Description,
   Email,
   FileInput,
   MenuWrapper,
@@ -19,5 +22,6 @@ export {
   PrimaryButton,
   SecondaryButton,
   Text,
-  TextArea
+  TextArea,
+  Title
 };
