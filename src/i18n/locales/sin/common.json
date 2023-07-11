@@ -1,13 +1,33 @@
 {
   "welcome": "සාදරයෙන් පිළිගනිමු",
   "button": {
-    "login": "ඇතුල් වන්න",
-    "logout": "Log out",
-    "signup": "Sign Up",
-    "signup-google": "Sign up with Google",
-    "login-google": "Login with Google",
-    "send-invites": "Send Invites",
-    "get-started": "Get Started",
-    "next": "ඊළඟ"
+    "signin": "ඇතුල් වන්න",
+    "logout": "පිටවීම",
+    "signup": "ලියාපදිංචි වන්න",
+    "add-new": "අලුතින් එකතු කරන්න",
+    "cancel": "අවලංගු කරන්න",
+    "add-expense": "වියදම් එකතු කරන්න",
+    "update-expense": "වියදම් යාවත්කාලීන කරන්න",
+    "update-income": "ආදායම යාවත්කාලීන කරන්න",
+    "delete": "මකන්න"
+  },
+  "form": {
+    "first-Name": "මුල් නම",
+    "llast-Name": "අවසන් නම",
+    "email": "විද්යුත් තැපෑල",
+    "password": "මුරපදය",
+    "confirm-password": "මුරපදය තහවුරු කරන්න",
+    "current-password": "වත්මන් මුර පදය",
+    "confirm-new-password": "නව මුරපදය තහවුරු කරන්න",
+    "enter-email": "ඔබගේ විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+    "enter-new-password": "නව මුරපදය ඇතුළත් කරන්න",
+    "amount": "ප්රමාණය",
+    "date": "DD/MM/YYYY",
+    "description": "විස්තර",
+    "email-sample": "hello@cheyne.com"
+  },
+  "type": {
+    "income": "ආදායම",
+    "expense": "වියදම්"
   }
 }

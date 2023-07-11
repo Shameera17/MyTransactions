@@ -7,10 +7,10 @@ const SiderMenu = () => {
   const navigate = useNavigate();
   return (
     <MenuWrapper className=" w-full space-y-2">
-      <MenuItem onClick={() => navigate("/dashboard")} key={0}>
+      <MenuItem onClick={() => navigate("/app/dashboard")} key={0}>
         Dashboard
       </MenuItem>
-      <MenuItem key={1} onClick={() => navigate("/settings")}>
+      <MenuItem key={1} onClick={() => navigate("/app/settings")}>
         Settings
       </MenuItem>
     </MenuWrapper>

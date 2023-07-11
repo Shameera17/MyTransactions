@@ -1,17 +1,33 @@
 {
   "welcome": "Welcome",
   "button": {
-    "login": "Log In",
+    "signin": "Sign In",
     "logout": "Log out",
     "signup": "Sign Up",
-    "signup-google": "Sign up with Google",
-    "login-google": "Login with Google",
-    "send-invites": "Send Invites",
-    "get-started": "Get Started",
-    "next": "Next"
+    "add-new": "Add New",
+    "cancel": "Cancel",
+    "add-expense": "Add Expense",
+    "update-expense": "Update Expense",
+    "update-income": "Update Income",
+    "delete": "Delete"
   },
-  "label": {
-    "settings": "Settings",
-    "dashboard": "Dashboard"
+  "form": {
+    "first-Name": "First Name",
+    "llast-Name": "Last Name",
+    "email": "Emai",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
+    "current-password": "Current Password",
+    "confirm-new-password": "Confirm New Password",
+    "enter-email": "Enter your email",
+    "enter-new-password": "Enter new passwrod",
+    "amount": "Amount",
+    "date": "DD/MM/YYYY",
+    "description": "Description",
+    "email-sample": "hello@cheyne.com"
+  },
+  "type": {
+    "income": "Income",
+    "expense": "Expense"
   }
 }

@@ -49,19 +49,20 @@ What things you need to install the software and how to install them:
 1. Clone the repository.
 
    ```bash
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/Shameera17/MyTransactions.git
    ```
 
    <!-- USAGE EXAMPLES -->
 
-   How to run the project and any additional details.
+2. How to run the project and any additional details.
 
 - yarn start
-  Contact
 
-Your Name - email@example.com
+Contact
 
-Project Link: https://github.com/your-username/your-repo
+Your Name - Shameera Carrim
+
+Project Link: https://github.com/Shameera17/MyTransactions
 
 <!-- ACKNOWLEDGEMENTS -->
 

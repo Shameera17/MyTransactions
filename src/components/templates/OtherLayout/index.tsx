@@ -3,14 +3,19 @@ import React from "react";
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
+const screenStyle: React.CSSProperties = {
+  padding: "0 136px",
+  paddingTop: "32px",
+  backgroundColor: "white"
+};
+
 const headerStyle: React.CSSProperties = {
-  textAlign: "center",
-  color: "#fff",
+  color: "black",
   height: 64,
   paddingInline: 50,
   lineHeight: "64px",
-  backgroundColor: "#7dbcea"
+  backgroundColor: "white"
 };
 
 const contentStyle: React.CSSProperties = {
@@ -18,29 +23,39 @@ const contentStyle: React.CSSProperties = {
   minHeight: 120,
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "#108ee9"
+  backgroundColor: "white"
 };
 
-const siderStyle: React.CSSProperties = {
-  textAlign: "center",
-  lineHeight: "120px",
-  color: "#fff",
-  backgroundColor: "#3ba0e9"
+const fontStyle: React.CSSProperties = {
+  fontSize: "24px",
+  fontWeight: 600,
+  lineHeight: "24px",
+  letterSpacing: "0px",
+  textAlign: "left"
 };
 
 const footerStyle: React.CSSProperties = {
   textAlign: "center",
-  color: "#fff",
-  backgroundColor: "#7dbcea"
+  color: "Grey",
+  backgroundColor: "white"
 };
 const OtherLayout = () => {
   return (
-    <Layout className=" h-screen">
-      <Header style={headerStyle}>Header</Header>
+    <Layout className=" h-screen" style={screenStyle}>
+      <Header style={headerStyle}>
+        <div className="demo-logo-vertical p-1 ">
+          <span style={fontStyle} className=" text-crayola font-medium">
+            Expense
+          </span>
+          <span style={fontStyle} className="font-medium ">
+            Tracker
+          </span>
+        </div>
+      </Header>
       <Content className="" style={contentStyle}>
         <Outlet />
       </Content>
-      <Footer style={footerStyle}>Footer</Footer>
+      <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>
     </Layout>
   );
 };

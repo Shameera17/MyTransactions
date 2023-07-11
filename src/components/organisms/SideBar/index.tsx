@@ -1,10 +1,12 @@
 import { Layout } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { PrimaryButton } from "components/atoms";
 import SiderMenu from "components/molecules/Menu/SiderMenu";
 
 const SideBar = () => {
   const { Sider } = Layout;
+  const { t } = useTranslation();
   return (
     <Sider
       id="Sider"
@@ -30,7 +32,7 @@ const SideBar = () => {
         <PrimaryButton
           className=" w-full "
           onClick={function (): void {}}
-          buttonName={"Add New"}
+          buttonName={t("button.add-new")}
         />
       </div>
       {/* menu control */}

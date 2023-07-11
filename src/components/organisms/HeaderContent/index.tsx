@@ -1,13 +1,15 @@
 import { DatePicker, Typography } from "antd";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
 import { PrimaryButton } from "components/atoms";
 
 const HeaderContent = () => {
   const location = useLocation();
-
-  const path = location.pathname.replace("/", "");
+  const path = location.pathname.replace("/app/", "");
   const pathFormat = path.charAt(0).toUpperCase() + path.slice(1);
+
+  const { t } = useTranslation();
 
   return (
     <div className="flex justify-between align-middle">
@@ -25,7 +27,7 @@ const HeaderContent = () => {
           <DatePicker picker="month" format={"MMM-YYYY"} className=" mr-4" />
           <PrimaryButton
             onClick={function (): void {}}
-            buttonName={"Add New"}
+            buttonName={t("button.add-new")}
           />
         </div>
       )}
