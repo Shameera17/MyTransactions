@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { Description, Title } from "components/atoms";
-import LayoutImageCard from "components/molecules/LayoutImageCard";
-import SignUpForm from "components/molecules/SignUpForm";
+import { LayoutImageCard, SignUpForm } from "components/molecules";
 
 const SignUp = () => {
   const { t } = useTranslation(["glossary"]);

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { MenuWrapper } from "components/atoms";
 
-const SiderMenu = () => {
+const SiderMenu: React.FC = () => {
   const navigate = useNavigate();
   return (
     <MenuWrapper className=" w-full space-y-2">
