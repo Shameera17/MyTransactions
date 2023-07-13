@@ -15,7 +15,7 @@ const SignUp = () => {
           }}
         >
           <Title title={t("signup.title")} />
-          <Description description={t("signup.description")} />
+          <Description level={1} description={t("signup.description")} />
         </div>
         <SignUpForm onSubmit={() => {}} />
       </div>

@@ -18,6 +18,7 @@ const Text: FC<TextProps> = ({ name, label, rules, size, status }) => {
   ];
   return (
     <Form.Item
+      className="custom-form-item"
       name={name}
       rules={
         rules?.length

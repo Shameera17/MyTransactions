@@ -9,6 +9,7 @@ import TextArea from "./Input/TextArea";
 import MenuWrapperItem from "./Menu/Item";
 import MenuWrapper from "./Menu/Wrapper";
 import Description from "./Typography/Description";
+import LinkSentence from "./Typography/Link";
 import Title from "./Typography/Title";
 
 export {
@@ -16,6 +17,7 @@ export {
   Description,
   Email,
   FileInput,
+  LinkSentence,
   MenuWrapper,
   MenuWrapperItem,
   Password,

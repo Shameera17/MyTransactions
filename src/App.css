@@ -16,3 +16,10 @@
   color: #157afe;
   background-color: #c9e0ff;
 }
+
+.custom-form-item .ant-form-item-control-input-content {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}

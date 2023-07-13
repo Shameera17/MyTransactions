@@ -2,32 +2,35 @@ import React from "react";
 
 import { Typography } from "antd";
 
-interface DescriptionProps {
+interface LinkSentenceProps {
   description: string;
   className?: string;
   level?: number;
+  onClick?: () => void;
 }
-const Description: React.FC<DescriptionProps> = ({
+const LinkSentence: React.FC<LinkSentenceProps> = ({
   description,
   className,
-  level
+  level,
+  onClick
 }) => {
-  const { Paragraph, Link } = Typography;
+  const { Link } = Typography;
 
   return (
-    <Paragraph
-      className={`text-night ${className}`}
+    <Link
+      onClick={onClick}
+      className={` ${className}`}
       style={{
         fontSize: level === 1 ? "14px" : "12px",
         fontWeight: 400,
-        lineHeight: level === 1 ? "16px" : " 11.72px",
+        lineHeight: level === 1 ? "16.41px" : "11.72px",
         letterSpacing: "0.4000000059604645px",
         textAlign: "center",
         fontStyle: "normal"
       }}
     >
       {description}
-    </Paragraph>
+    </Link>
   );
 };
-export default Description;
+export default LinkSentence;

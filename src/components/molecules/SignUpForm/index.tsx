@@ -3,8 +3,15 @@ import React from "react";
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
-import { Password, PrimaryButton, Text } from "components/atoms";
+import {
+  Description,
+  LinkSentence,
+  Password,
+  PrimaryButton,
+  Text
+} from "components/atoms";
 
 interface SignUpFormProps {
   onSubmit: (values: any) => void;
@@ -20,6 +27,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
   const handleFinish = (values: any) => {
     onSubmit(values);
   };
+  const navigate = useNavigate();
 
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
@@ -31,7 +39,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       onFinish={handleFinish}
       onFinishFailed={handleFinishFailed}
     >
-      <div className="grid desktop:grid-cols-2 laptop:grid-cols-2 gap-2 tablet:grid-cols-1">
+      <div className="grid desktop:grid-cols-2 laptop:grid-cols-2 desktop:gap-2 laptop:gap-2 tablet:grid-cols-1">
         <Text name={"firstName"} size="large" label={t("form.first-Name")} />
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
       </div>
@@ -43,6 +51,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         label={t("form.confirm-password")}
       />
       <PrimaryButton
+        className=" mt-6"
         height="40px"
         size="middle"
         onClick={() => {
@@ -50,6 +59,20 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         }}
         buttonName={t("button.signup").toUpperCase()}
       />
+      <span className="flex mt-4">
+        <Description
+          className="flex justify-start"
+          description={t("signup.have-account", { ns: "glossary" })}
+        />
+        <LinkSentence
+          onClick={() => {
+            navigate("/signin");
+          }}
+          level={2}
+          className="flex justify-start "
+          description={t("signin.title", { ns: "glossary" })}
+        />
+      </span>
     </Form>
   );
 };
