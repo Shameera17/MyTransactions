@@ -1,12 +1,8 @@
-// i18next.d.ts
-import "i18next";
-
-import { defaultNS, resources } from "../i18n/i18n";
+import resources from "./resources";
 
 declare module "i18next" {
   interface CustomTypeOptions {
-    defaultNS: typeof defaultNS;
-    returnNull: false;
-    resources: (typeof resources)["en"];
+    // defaultNS: "common";
+    resources: typeof resources;
   }
 }

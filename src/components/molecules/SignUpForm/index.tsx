@@ -57,7 +57,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         onClick={() => {
           form.validateFields();
         }}
-        buttonName={t("button.signup").toUpperCase()}
+        buttonName={t("button.signup")}
       />
       <span className="flex mt-4">
         <Description

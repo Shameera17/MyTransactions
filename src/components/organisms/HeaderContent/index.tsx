@@ -26,6 +26,7 @@ const HeaderContent = () => {
         <div>
           <DatePicker picker="month" format={"MMM-YYYY"} className=" mr-4" />
           <PrimaryButton
+            width="120px"
             onClick={function (): void {}}
             buttonName={t("button.add-new")}
           />

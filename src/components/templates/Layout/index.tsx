@@ -8,6 +8,11 @@ import { HeaderContent, SideBar } from "components/organisms";
 const { Header, Content, Footer } = Wrapper;
 
 const Layout: React.FC = () => {
+  const footerStyle: React.CSSProperties = {
+    textAlign: "center",
+    color: "Grey",
+    backgroundColor: "white"
+  };
   return (
     <Wrapper id="wrapper" hasSider className=" h-screen">
       <SideBar />
@@ -21,9 +26,7 @@ const Layout: React.FC = () => {
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           <Outlet />
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
+        <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>
       </Wrapper>
     </Wrapper>
   );

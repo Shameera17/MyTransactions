@@ -6,7 +6,7 @@ import SiderMenu from "components/molecules/Menu/SiderMenu";
 
 const SideBar = () => {
   const { Sider } = Layout;
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   return (
     <Sider
       id="Sider"

@@ -23,7 +23,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   isLoading = false
 }) => {
   const [form] = useForm();
-  const { t } = useTranslation(["glossary", "common"]);
+  const { t } = useTranslation();
   const handleFinish = (values: any) => {
     form.validateFields().then(() => {
       onSubmit(values);
@@ -34,7 +34,6 @@ const LoginForm: React.FC<LoginFormProps> = ({
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
   };
-
   return (
     <Form
       form={form}
@@ -42,7 +41,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
       className="grid gap-2"
       onFinishFailed={handleFinishFailed}
     >
-      <Text name={"email"} size="large" label={t("common:form.email")} />
+      <Text
+        name={"email"}
+        rules={[
+          { type: "email", message: t("validations:inputs.email-invalid") }
+        ]}
+        size="large"
+        label={t("common:form.email")}
+      />
       <Password
         name={"password"}
         size="large"
@@ -60,7 +66,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         onClick={() => {
           form.validateFields();
         }}
-        buttonName={t("common:button.signin").toUpperCase()}
+        buttonName={t("common:button.signin")}
       />
       <span className="flex mt-4">
         <Description

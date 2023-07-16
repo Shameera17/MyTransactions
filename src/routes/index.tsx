@@ -11,6 +11,7 @@ const Layout = React.lazy(() => import("components/templates/Layout"));
 const OtherLayout = React.lazy(
   () => import("components/templates/OtherLayout")
 );
+const Loading = React.lazy(() => import("components/molecules/Loading"));
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -35,7 +36,7 @@ const Routes = () => {
   ]);
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <RouterProvider router={router} />
       </Suspense>
     </>
