@@ -23,7 +23,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   isLoading = false
 }) => {
   const [form] = useForm();
-  const { t } = useTranslation();
+  const { t } = useTranslation(["validations", "common", "glossary"]);
   const handleFinish = (values: any) => {
     form.validateFields().then(() => {
       onSubmit(values);

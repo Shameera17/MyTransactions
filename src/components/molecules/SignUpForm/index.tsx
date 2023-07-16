@@ -23,7 +23,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
   isLoading = false
 }) => {
   const [form] = useForm();
-  const { t } = useTranslation();
+  const { t } = useTranslation(["common", "glossary", "validations"]);
   const handleFinish = (values: any) => {
     onSubmit(values);
   };
@@ -62,7 +62,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       <span className="flex mt-4">
         <Description
           className="flex justify-start"
-          description={t("signup.have-account", { ns: "glossary" })}
+          description={t("glossary:signup.have-account")}
         />
         <LinkSentence
           onClick={() => {
@@ -70,7 +70,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
           }}
           level={2}
           className="flex justify-start "
-          description={t("signin.title", { ns: "glossary" })}
+          description={t("glossary:signin.title")}
         />
       </span>
     </Form>

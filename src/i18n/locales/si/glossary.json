@@ -11,7 +11,8 @@
     "have-read": "I have read and agree to the ",
     "terms": "Terms of Service",
     "have-account": "Already have an account?",
-    "login": "Log In"
+    "login": "Log In",
+    "title": "ලියාපදිංචි වන්න"
   },
   "signup-invitation": {
     "message": "You're about to get on board using"
@@ -40,5 +41,13 @@
   "personal-info": {
     "getting-started": "Getting Started",
     "welcome": "Welcome! Let’s get things rolling"
+  },
+  "set-new-password": {
+    "description": "කරුණාකර ඔබගේ නව මුරපදය මෙහි ඇතුලත් කරන්න"
+  },
+  "signin": {
+    "signup": "ලියාපදිංචි වන්න",
+    "title": "පුරන්න",
+    "description": "වියදම් ට්රැකර් වෙත නැවත සාදරයෙන් පිළිගනිමු"
   }
 }

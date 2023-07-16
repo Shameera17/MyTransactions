@@ -14,8 +14,11 @@ const Login = () => {
             marginBottom: "48px"
           }}
         >
-          <Title title={t("signin.title")} />
-          <Description level={1} description={t("signin.description")} />
+          <Title title={t("glossary:signin.title")} />
+          <Description
+            level={1}
+            description={t("glossary:signin.description")}
+          />
         </div>
         <LoginForm onSubmit={() => {}} />
       </div>

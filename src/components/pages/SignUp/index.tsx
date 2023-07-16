@@ -4,7 +4,7 @@ import { Description, Title } from "components/atoms";
 import { LayoutImageCard, SignUpForm } from "components/molecules";
 
 const SignUp = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["glossary"]);
   return (
     <div className=" grid grid-cols-2 gap-4 content-center">
       <LayoutImageCard screen="signup" />
