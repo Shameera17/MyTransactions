@@ -3,9 +3,9 @@ import glossary from "../i18n/locales/en/glossary.json";
 import validations from "../i18n/locales/en/validations.json";
 
 const resources = {
-  common,
-  glossary,
-  validations
+  common: common,
+  glossary: glossary,
+  validations: validations
 } as const;
 
 export default resources;

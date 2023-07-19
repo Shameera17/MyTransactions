@@ -12,6 +12,9 @@ const OtherLayout = React.lazy(
   () => import("components/templates/OtherLayout")
 );
 const Loading = React.lazy(() => import("components/molecules/Loading"));
+const ForgotPassword = React.lazy(
+  () => import("components/pages/ForgotPassword")
+);
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -21,7 +24,8 @@ const Routes = () => {
       errorElement: <PageNotFound />,
       children: [
         { path: "signin", element: <Login /> },
-        { path: "signup", element: <SignUp /> }
+        { path: "signup", element: <SignUp /> },
+        { path: "forgotpassword", element: <ForgotPassword /> }
       ]
     },
     {
