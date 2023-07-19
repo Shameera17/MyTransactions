@@ -13,7 +13,7 @@ const initialState: InitialState = {
   isModalOpen: false
 };
 
-const transactionSlice = createSlice({
+const transactionSlice: any = createSlice({
   name: "transaction",
   initialState,
   reducers: {

@@ -21,7 +21,9 @@
     "reset-password": "Reset Password",
     "will-send-you-code": "We will send you a code to confirm password reset process",
     "send-code": "Send Code",
-    "back-to-login": "Back to Login"
+    "back-to-login": "Back to Login",
+    "title": "මුරපදය අමතක වුණා ද?",
+    "description": "කණගාටු නොවන්න, අපි ඔබට යළි පිහිටුවීමේ උපදෙස් එවන්නෙමු"
   },
   "reset-password": {
     "create-new-password": "Create New Password",
@@ -43,11 +45,17 @@
     "welcome": "Welcome! Let’s get things rolling"
   },
   "set-new-password": {
-    "description": "කරුණාකර ඔබගේ නව මුරපදය මෙහි ඇතුලත් කරන්න"
+    "description": "කරුණාකර ඔබගේ නව මුරපදය මෙහි ඇතුලත් කරන්න",
+    "title": "නව මුරපදය සකසන්න"
   },
   "signin": {
     "signup": "ලියාපදිංචි වන්න",
     "title": "පුරන්න",
     "description": "වියදම් ට්රැකර් වෙත නැවත සාදරයෙන් පිළිගනිමු"
+  },
+  "password-reset-success": {
+    "title": "මුරපදය යළි පිහිටුවීම සාර්ථකයි!",
+    "description-1": "ඔබගේ මුරපදය සාර්ථකව නැවත සකස් කර ඇත.",
+    "description-2": "මැජික් ලෙස ලොග් වීමට පහත ක්ලික් කරන්න."
   }
 }

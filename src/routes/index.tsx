@@ -15,6 +15,15 @@ const Loading = React.lazy(() => import("components/molecules/Loading"));
 const ForgotPassword = React.lazy(
   () => import("components/pages/ForgotPassword")
 );
+const CheckYourEmail = React.lazy(
+  () => import("components/pages/CheckYourEmail")
+);
+const PasswordRestSuccess = React.lazy(
+  () => import("components/pages/PasswordRestSuccess")
+);
+const SetNewPassword = React.lazy(
+  () => import("components/pages/SetNewPassword")
+);
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -25,7 +34,10 @@ const Routes = () => {
       children: [
         { path: "signin", element: <Login /> },
         { path: "signup", element: <SignUp /> },
-        { path: "forgotpassword", element: <ForgotPassword /> }
+        { path: "forgotpassword", element: <ForgotPassword /> },
+        { path: "checkyouremail", element: <CheckYourEmail /> },
+        { path: "passwordrestsuccess", element: <PasswordRestSuccess /> },
+        { path: "setnewpassword", element: <SetNewPassword /> }
       ]
     },
     {
