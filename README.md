@@ -41,8 +41,20 @@ To get a local copy up and running follow these simple steps.
 
 What things you need to install the software and how to install them:
 
-- Node.js (version X.X.X)
-- Yarn (version X.X.X)
+- Node.js 
+```bash
+   Download NodeJS from https://nodejs.org/en and install
+   ```
+- Yarn 
+```bash
+   Install Yarn globally by entering following code into command promt
+   npm install --global yarn
+   ```
+- Typescript
+```bash
+   Install Typescript globally by entering following code into command promt
+   npm install -g typescript
+   ```
 
 ### Installation
 
