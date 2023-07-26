@@ -43,7 +43,8 @@ What things you need to install the software and how to install them:
 
 - Node.js 
 ```bash
-   Download NodeJS from https://nodejs.org/en and install
+   Download NodeJS from: https://nodejs.org/en 
+   and install NodeJS globally
    ```
 - Yarn 
 ```bash
@@ -61,7 +62,7 @@ What things you need to install the software and how to install them:
 1. Clone the repository.
 
    ```bash
-   git clone https://github.com/Shameera17/MyTransactions.git
+   git clone : https://github.com/Shameera17/MyTransactions.git
    ```
 
    <!-- USAGE EXAMPLES -->
