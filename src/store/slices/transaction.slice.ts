@@ -13,13 +13,14 @@ const initialState: InitialState = {
   isModalOpen: false
 };
 
-const transactionSlice: any = createSlice({
+const transactionSlice = createSlice({
   name: "transaction",
   initialState,
   reducers: {
     savedTransations: (state, action: PayloadAction<iTransaction[]>) => {
       state.transactions = action.payload;
     },
+
     savedTransaction: (state, action: PayloadAction<iTransaction>) => {
       state.transaction = action.payload;
     },
