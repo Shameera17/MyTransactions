@@ -42,40 +42,59 @@ To get a local copy up and running follow these simple steps.
 What things you need to install the software and how to install them:
 
 - Node.js 
+Download the Node.js Setup file and Run Node. js Setup File
+
 ```bash
-   Download NodeJS from: https://nodejs.org/en 
-   and install NodeJS globally
+   https://nodejs.org/en 
    ```
+Open Command Prompt
+
 - Yarn 
+Install Yarn globally by entering following code into command promt
+
 ```bash
-   Install Yarn globally by entering following code into command promt
    npm install --global yarn
    ```
+
 - Typescript
+
+
 ```bash
-   Install Typescript globally by entering following code into command promt
    npm install -g typescript
    ```
 
 ### Installation
+0. Download and install Visual Studio Code text editor
+
+ ```bash
+   https://visualstudio.microsoft.com/
+   ```
+
 
 1. Clone the repository.
 
    ```bash
-   git clone : https://github.com/Shameera17/MyTransactions.git
+   git clone https://github.com/Shameera17/MyTransactions.git
    ```
 
-   <!-- USAGE EXAMPLES -->
+2. Go to the cloned project and open it using Visual Studio Code
 
 2. How to run the project and any additional details.
 
-- yarn start
+- Open the terminal (in windows click control+`)
+- Install the project dependencies by entering Yarn Install 
+- Once the installation is completed, start the project by entering
+
+```bash
+   yarn start
+   ```
 
 Contact
 
 Your Name - Shameera Carrim
 
 Project Link: https://github.com/Shameera17/MyTransactions
+Design Link: https://www.figma.com/file/4bFPWMSw8IJcdIoSHrTdL4/Expense-Tracker?type=design&node-id=1-9&t=tI1mVrvdaYkk47TG-0
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -83,3 +102,4 @@ Acknowledgements
 
     Choose an Open Source License
     [GitHub Pages](https)
+Install Typescript globally by entering following code into command promt

@@ -4,13 +4,14 @@ import { Button } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 
 interface PrimaryButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   buttonName: string;
   className?: string;
   size?: SizeType;
   width?: string;
   height?: string;
+  ghost?: boolean;
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -20,21 +21,23 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   className,
   size,
   width,
-  height
+  height,
+  ghost
 }) => {
   return (
     <Button
       size={size}
       type="primary"
-      className={` bg-crayola text-white ${className}`}
+      ghost={ghost}
+      className={` bg-crayola text-white ${className} whitespace-pre-line `}
       onClick={onClick}
       disabled={disabled}
       style={{
-        width: width ?? "100%",
+        width: width,
         height: height
       }}
     >
-      {buttonName}
+      <span className="break-normal">{buttonName}</span>
     </Button>
   );
 };

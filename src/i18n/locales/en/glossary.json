@@ -52,15 +52,16 @@
       "type": "Type",
       "date": "Date",
       "actions": "Actions"
-    },
-    "settings": {
-      "title": "Settings",
-      "upload-image": "Upload Image",
-      "general": "General",
-      "save-changes": "Save Changes",
-      "change-password": "Change Password",
-      "delete": "Delete",
-      "delete-user-account": "Delete user account"
     }
+    
+  },
+  "settings": {
+    "title": "Settings",
+    "upload-image": "Upload Image",
+    "general": "General",
+    "save-changes": "Save Changes",
+    "change-password": "Change Password",
+    "delete": "Delete",
+    "delete-user-account": "Delete user account"
   }
 }

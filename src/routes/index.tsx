@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+const Home = React.lazy(() => import("components/pages/Home"));
 const Dashboard = React.lazy(() => import("components/pages/Dashboard"));
 const Login = React.lazy(() => import("components/pages/Login"));
 const PageNotFound = React.lazy(() => import("components/pages/PageNotFound"));
@@ -32,6 +33,7 @@ const Routes = () => {
       element: <OtherLayout />,
       errorElement: <PageNotFound />,
       children: [
+        { path: "/", element: <Home /> },
         { path: "signin", element: <Login /> },
         { path: "signup", element: <SignUp /> },
         { path: "forgotpassword", element: <ForgotPassword /> },

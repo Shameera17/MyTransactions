@@ -30,7 +30,7 @@ const SideBar = () => {
       {/* create transaction */}
       <div className="add-expense-button p-1 my-6">
         <PrimaryButton
-          className=" w-full "
+          className=" w-full whitespace-pre-line h-auto"
           onClick={function (): void {}}
           buttonName={t("button.add-new")}
         />

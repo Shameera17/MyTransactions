@@ -57,5 +57,29 @@
     "title": "මුරපදය යළි පිහිටුවීම සාර්ථකයි!",
     "description-1": "ඔබගේ මුරපදය සාර්ථකව නැවත සකස් කර ඇත.",
     "description-2": "මැජික් ලෙස ලොග් වීමට පහත ක්ලික් කරන්න."
+  },
+  "dashboard": {
+    "title": "උපකරණ පුවරුව",
+    "all-income": "All Income",
+    "all-expenses": "All Expenses",
+    "month-carried": "{{month}} (Carried)",
+    "balance-total": "Balance Total",
+    "record-count": "{{count}} records",
+    "table-column": {
+      "item": "Item (description)",
+      "amount": "Amount",
+      "type": "Type",
+      "date": "Date",
+      "actions": "Actions"
+    }
+  },
+  "settings": {
+    "title": "සැකසුම්",
+    "upload-image": "Upload Image",
+    "general": "General",
+    "save-changes": "වෙනස්කම් සුරකින්න",
+    "change-password": "Change Password",
+    "delete": "Delete",
+    "delete-user-account": "Delete user account"
   }
 }

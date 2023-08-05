@@ -18,7 +18,7 @@ const Description: React.FC<DescriptionProps> = ({
     <Paragraph
       className={`text-night ${className}`}
       style={{
-        fontSize: level === 1 ? "14px" : "12px",
+        fontSize: level === 1 ? "17px" : "12px",
         fontWeight: 400,
         lineHeight: level === 1 ? "16px" : " 11.72px",
         letterSpacing: "0.4000000059604645px",

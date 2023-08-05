@@ -1,5 +1,6 @@
 {
   "welcome": "Welcome",
+  "description": "Track your expenses & incomes easily",
   "button": {
     "signin": "Sign In",
     "logout": "Log out",
@@ -21,6 +22,7 @@
     "confirm-new-password": "Confirm New Password",
     "enter-email": "Enter your email",
     "enter-new-password": "Enter new passwrod",
+    "new-password": "New passwrod",
     "amount": "Amount",
     "date": "DD/MM/YYYY",
     "description": "Description",
