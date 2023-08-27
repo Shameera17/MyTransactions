@@ -17,7 +17,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setCredentials: (state, action: PayloadAction<IUserInfo>) => {
+    setUserInfo: (state, action: PayloadAction<IUserInfo>) => {
       state.userInfo = action.payload;
     },
     signout: state => {
@@ -25,6 +25,7 @@ const authSlice = createSlice({
       localStorage.removeItem("userInfo");
     },
     setToken(state, action: PayloadAction<{ token: string }>) {
+      console.log(action.payload.token);
       localStorage.setItem("token", action.payload.token);
       state.token = action.payload.token;
     },
@@ -53,7 +54,7 @@ const authSlice = createSlice({
   }
 });
 export const {
-  setCredentials,
+  setUserInfo,
   signout,
   setToken,
   clearToken,

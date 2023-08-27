@@ -1,15 +1,23 @@
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
+import { refreshAuthToken } from "store/reducers/auth.reducer";
 
 import "./App.css";
 import "./i18n/i18n";
 import Routes from "./routes";
 
 function App() {
- 
-  return (
-   
-      <Routes />
-   
-  );
+  const auth = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!auth.userInfo && !auth.token) {
+      dispatch(refreshAuthToken());
+    }
+  }, [auth.userInfo, auth.token]);
+
+  return <Routes />;
 }
 
 export default App;

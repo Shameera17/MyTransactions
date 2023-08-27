@@ -33,6 +33,15 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
     console.log("Form validation failed:", errorInfo);
   };
 
+  const validateConfirmPassword = ({ getFieldValue }: any) => ({
+    validator(_: any, value: any) {
+      if (!value || getFieldValue("password") === value) {
+        return Promise.resolve();
+      }
+      return Promise.reject(new Error("Passwords do not match."));
+    }
+  });
+
   return (
     <Form
       form={form}
@@ -43,9 +52,27 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         <Text name={"firstName"} size="large" label={t("form.first-Name")} />
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
       </div>
-      <Text name={"email"} size="large" label={t("form.email")} />
-      <Password name={"password"} size="large" label={t("form.password")} />
+      <Text
+        name={"email"}
+        size="large"
+        label={t("form.email")}
+        rules={[
+          { type: "email", message: t("validations:inputs.email-invalid") }
+        ]}
+      />
       <Password
+        rules={[
+          { min: 6, message: "Password must be at least 6 characters long." }
+        ]}
+        name={"password"}
+        size="large"
+        label={t("form.password")}
+      />
+      <Password
+        rules={[
+          { required: true, message: "Please confirm your password." },
+          validateConfirmPassword
+        ]}
         name={"confirmPassword"}
         size="large"
         label={t("form.confirm-password")}
@@ -54,6 +81,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         className=" mt-6"
         height="40px"
         size="middle"
+        htmlType="submit"
         onClick={() => {
           form.validateFields();
         }}

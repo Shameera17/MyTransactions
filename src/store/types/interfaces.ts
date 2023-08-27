@@ -1,9 +1,10 @@
 // auth types
 export type IUserInfo = {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  role: "seller" | "buyer";
+  status: string;
 };
 
 export type IAction = {

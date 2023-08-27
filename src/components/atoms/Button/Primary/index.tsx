@@ -12,6 +12,7 @@ interface PrimaryButtonProps {
   width?: string;
   height?: string;
   ghost?: boolean;
+  htmlType?: "button" | "submit" | "reset";
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -22,10 +23,12 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   size,
   width,
   height,
-  ghost
+  ghost,
+  htmlType
 }) => {
   return (
     <Button
+      htmlType={htmlType}
       size={size}
       type="primary"
       ghost={ghost}

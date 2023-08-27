@@ -8,6 +8,7 @@ import Text from "./Input/Text";
 import TextArea from "./Input/TextArea";
 import MenuWrapperItem from "./Menu/Item";
 import MenuWrapper from "./Menu/Wrapper";
+import { showNotification } from "./Notification";
 import Description from "./Typography/Description";
 import LinkSentence from "./Typography/Link";
 import Title from "./Typography/Title";
@@ -25,5 +26,6 @@ export {
   SecondaryButton,
   Text,
   TextArea,
-  Title
+  Title,
+  showNotification
 };

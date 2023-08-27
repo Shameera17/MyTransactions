@@ -24,23 +24,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
 }) => {
   const [form] = useForm();
   const { t } = useTranslation(["validations", "common", "glossary"]);
-  const handleFinish = (values: any) => {
-    form.validateFields().then(() => {
-      onSubmit(values);
-    });
-  };
+
   const navigate = useNavigate();
 
-  const handleFinishFailed = (errorInfo: any) => {
-    console.log("Form validation failed:", errorInfo);
-  };
   return (
-    <Form
-      form={form}
-      onFinish={handleFinish}
-      className="grid gap-2"
-      onFinishFailed={handleFinishFailed}
-    >
+    <Form form={form}>
       <Text
         name={"email"}
         rules={[
@@ -60,11 +48,19 @@ const LoginForm: React.FC<LoginFormProps> = ({
         description={t("glossary:signin.forgot-password")}
       />
       <PrimaryButton
+        htmlType="submit"
         className=" mt-6"
         height="40px"
         size="middle"
         onClick={() => {
-          form.validateFields();
+          console.log("ss");
+          form
+            .validateFields()
+            .then(data => {
+              console.log("data", data);
+              onSubmit(data);
+            })
+            .catch(error => console.log(error));
         }}
         buttonName={t("common:button.signin")}
       />
