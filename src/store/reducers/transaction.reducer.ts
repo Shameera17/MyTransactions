@@ -1,10 +1,11 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { TransactionList } from "interfaces/Expense";
 import { ITransactionType } from "interfaces/User";
 import { iTransaction } from "store/types/transaction.types";
 
 type InitialState = {
   transaction: iTransaction;
-  transactions: iTransaction[] | [];
+  transactions: TransactionList | [];
   isModalOpen: boolean;
   transactionTypes: ITransactionType[] | [];
 };
@@ -20,7 +21,7 @@ const transactionSlice = createSlice({
   name: "transaction",
   initialState,
   reducers: {
-    savedTransations: (state, action: PayloadAction<iTransaction[]>) => {
+    savedTransations: (state, action: PayloadAction<TransactionList>) => {
       state.transactions = action.payload;
     },
 

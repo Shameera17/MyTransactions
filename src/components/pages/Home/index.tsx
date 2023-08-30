@@ -1,5 +1,9 @@
+import { useEffect } from "react";
+
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "store";
 
 import { Description, PrimaryButton, Title } from "components/atoms";
 import { LayoutImageCard } from "components/molecules";
@@ -7,6 +11,11 @@ import { LayoutImageCard } from "components/molecules";
 const Home = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { userInfo, token } = useSelector((state: RootState) => state.auth);
+
+  useEffect(() => {
+    if (userInfo && token) navigate("/app/dashboard");
+  }, [userInfo, token]);
 
   return (
     <div className="grid grid-cols-2">
