@@ -32,7 +32,7 @@ const SignUp = () => {
                 showNotification(
                   "success",
                   "Success",
-                  "Account Created succeffully. You will be directed to login page"
+                  "Account Created successfully. You will be directed to login page"
                 );
 
                 setTimeout(() => {

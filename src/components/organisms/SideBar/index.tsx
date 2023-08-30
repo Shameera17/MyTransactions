@@ -2,7 +2,10 @@ import { Layout } from "antd";
 import { useTranslation } from "react-i18next";
 
 import { PrimaryButton } from "components/atoms";
+import LoggedInUser from "components/molecules/LoggedInUser";
 import SiderMenu from "components/molecules/Menu/SiderMenu";
+
+import { ReactComponent as ExpenseTracker } from "../../../images/ExpenseTracker.svg";
 
 const SideBar = () => {
   const { Sider } = Layout;
@@ -10,7 +13,7 @@ const SideBar = () => {
   return (
     <Sider
       id="Sider"
-      className=" px-6 pt-5 border-r-2 border-lightBlue"
+      className=" px-6 flex gap-y-4 pt-8 border-r-2 border-lightBlue"
       style={{
         overflow: "auto",
         position: "absolute",
@@ -22,11 +25,12 @@ const SideBar = () => {
     >
       {/* logo */}
       <div className="demo-logo-vertical p-1 ">
-        <span className=" text-crayola font-medium">Expense</span>
-        <span className="font-medium ">Tracker</span>
+        <ExpenseTracker />
       </div>
       {/* logged user */}
-      <div className="logged-user-vertical" />
+      <div className="logged-user-vertical">
+        <LoggedInUser />
+      </div>
       {/* create transaction */}
       <div className="add-expense-button p-1 my-6">
         <PrimaryButton
@@ -38,7 +42,14 @@ const SideBar = () => {
       {/* menu control */}
       <SiderMenu />
       {/* version */}
-      <div className="version-tag flex justify-center  align-bottom text-grayDark">
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          margin: "0.2rem"
+        }}
+        className="version-tag  text-grayDark"
+      >
         v 1.0.0
       </div>
     </Sider>

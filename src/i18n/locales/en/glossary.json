@@ -17,7 +17,9 @@
   "forgot-password": {
     "title": "Forgot password?",
     "description": "No worries, we’ll send you reset instructions ",
+    "description1": "No worries, follow the reset instructions",
     "reset-password": "Reset Password",
+    "reset-proceed": "Proceed",
     "back-to-signin": "Back to Sign In"
   },
   "check-your-email": {
@@ -53,7 +55,6 @@
       "date": "Date",
       "actions": "Actions"
     }
-    
   },
   "settings": {
     "title": "Settings",

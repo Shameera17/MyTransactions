@@ -13,11 +13,11 @@ import { LayoutImageCard, LoginForm } from "components/molecules";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userInfo } = useSelector((state: RootState) => state.auth);
+  const { userInfo, token } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
-    if (userInfo) navigate("/app/dashboard");
-  }, [userInfo]);
+    if (userInfo && token) navigate("/app/dashboard");
+  }, [userInfo, token]);
   const { t } = useTranslation(["glossary"]);
   return (
     <div className=" grid grid-cols-2 gap-4 content-center">
@@ -28,11 +28,8 @@ const Login = () => {
             marginBottom: "48px"
           }}
         >
-          <Title title={t("glossary:signin.title")} />
-          <Description
-            level={1}
-            description={t("glossary:signin.description")}
-          />
+          <Title title={t("signin.title")} />
+          <Description level={1} description={t("signin.description")} />
         </div>
         <LoginForm
           onSubmit={values => {

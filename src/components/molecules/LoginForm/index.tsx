@@ -46,6 +46,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
         level={1}
         className="flex justify-end"
         description={t("glossary:signin.forgot-password")}
+        onClick={() => {
+          navigate("/forgotpassword");
+        }}
       />
       <PrimaryButton
         htmlType="submit"

@@ -44,10 +44,17 @@ const authSlice = createSlice({
     refreshAuthToken(state) {
       if (!state.userInfo && !state.token) {
         const token = localStorage.getItem("token");
-        const decodedToken = jwtDecode(token!);
-        // // Verify the token and extract the payload (user data) if valid
-        // const decoded: any = Jwt.verify(token!, secretKey!);
-        state.userInfo = decodedToken as any;
+        const decodedToken: any = token && jwtDecode(token!);
+
+        if (decodedToken) {
+          state.userInfo = {
+            firstName: decodedToken.FirstName,
+            lastName: decodedToken.LastName,
+            email: decodedToken.Email,
+            id: decodedToken.Id,
+            status: decodedToken.Status
+          };
+        }
         state.token = token;
       }
     }

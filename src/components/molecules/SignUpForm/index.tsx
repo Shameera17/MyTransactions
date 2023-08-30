@@ -2,6 +2,7 @@ import React from "react";
 
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
+import { validateConfirmPassword } from "helpers/formValidations";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -32,15 +33,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
   };
-
-  const validateConfirmPassword = ({ getFieldValue }: any) => ({
-    validator(_: any, value: any) {
-      if (!value || getFieldValue("password") === value) {
-        return Promise.resolve();
-      }
-      return Promise.reject(new Error("Passwords do not match."));
-    }
-  });
 
   return (
     <Form
@@ -78,6 +70,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
         label={t("form.confirm-password")}
       />
       <PrimaryButton
+        width="100%"
         className=" mt-6"
         height="40px"
         size="middle"

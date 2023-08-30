@@ -13,7 +13,8 @@ const LayoutImageCard: React.FC<LayoutImageCardProps> = ({ screen }) => {
   return (
     <div className="flex items-stretch">
       <Card
-        className="self-center"
+        // className="self-center"
+        className=" content-center"
         bordered={false}
         hoverable={false}
         style={{

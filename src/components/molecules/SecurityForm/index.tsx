@@ -2,6 +2,7 @@ import React from "react";
 
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
+import { validateConfirmPassword } from "helpers/formValidations";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +38,7 @@ const SecurityForm: React.FC<SecurityFormProps> = ({
         onFinishFailed={handleFinishFailed}
       >
         <Password
-          name={"password"}
+          name={"currentPassword"}
           size="large"
           label={t("form.current-password")}
         />
@@ -45,11 +46,18 @@ const SecurityForm: React.FC<SecurityFormProps> = ({
           name={"password"}
           size="large"
           label={t("form.new-password")}
+          rules={[
+            { min: 6, message: "Password must be at least 6 characters long." }
+          ]}
         />
         <Password
-          name={"password"}
+          name={"confirmPassword"}
           size="large"
           label={t("form.confirm-new-password")}
+          rules={[
+            { required: true, message: "Please confirm your password." },
+            validateConfirmPassword
+          ]}
         />
       </Form>
       <PrimaryButton

@@ -1,30 +1,27 @@
 import React from "react";
 
-import { Form } from "antd";
-import { useForm } from "antd/lib/form/Form";
+import { Form, FormInstance } from "antd";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { LinkSentence, PrimaryButton, Text } from "components/atoms";
 
 interface ForgotPasswordFormProps {
-  onSubmit: (values: any) => void;
-  isLoading?: boolean;
+  onSubmit: () => void;
+  form: FormInstance<any>;
 }
 
 const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
   onSubmit,
-  isLoading = false
+  form
 }) => {
-  const [form] = useForm();
   const { t } = useTranslation(["validations", "common", "glossary"]);
   const handleFinish = (values: any) => {
     form.validateFields().then(() => {
-      onSubmit(values);
+      onSubmit();
     });
   };
   const navigate = useNavigate();
-
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
   };
@@ -44,13 +41,11 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
         label={t("common:form.email")}
       />
       <PrimaryButton
+        htmlType="submit"
         className=" mt-6"
         height="40px"
         size="middle"
-        onClick={() => {
-          form.validateFields();
-        }}
-        buttonName={t("glossary:forgot-password.reset-password")}
+        buttonName={t("glossary:forgot-password.reset-proceed")}
       />
       <LinkSentence
         onClick={() => navigate("/signin")}

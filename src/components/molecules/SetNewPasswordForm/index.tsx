@@ -41,7 +41,7 @@ const SetNewPasswordForm: React.FC<SetNewPasswordFormProps> = ({
         label={t("common:form.enter-new-password")}
       />
       <Password
-        name={"password"}
+        name={"conf-password"}
         size="large"
         label={t("common:form.confirm-password")}
       />
@@ -50,9 +50,7 @@ const SetNewPasswordForm: React.FC<SetNewPasswordFormProps> = ({
         className=" mt-6"
         height="40px"
         size="middle"
-        onClick={() => {
-          form.validateFields();
-        }}
+        htmlType="submit"
         buttonName={t("glossary:set-new-password.reset-password")}
       />
       <LinkSentence

@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "store";
 
 import { PrimaryButton, Text } from "components/atoms";
 
 interface GeneralFormProps {
   onSubmit: (values: any) => void;
-  isLoading?: boolean;
 }
 
-const GeneralForm: React.FC<GeneralFormProps> = ({
-  onSubmit,
-  isLoading = false
-}) => {
+const GeneralForm: React.FC<GeneralFormProps> = ({ onSubmit }) => {
   const [form] = useForm();
   const { t } = useTranslation(["common", "glossary", "validations"]);
+  const { userInfo } = useSelector((state: RootState) => state.auth);
+
   const handleFinish = (values: any) => {
     onSubmit(values);
   };
@@ -26,6 +26,9 @@ const GeneralForm: React.FC<GeneralFormProps> = ({
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
   };
+  useEffect(() => {
+    form.setFieldsValue(userInfo);
+  }, [userInfo]);
 
   return (
     <>
@@ -39,6 +42,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
       </Form>
       <PrimaryButton
+        disabled={form.isFieldsTouched()}
         height="40px"
         size="middle"
         onClick={() => {

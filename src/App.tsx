@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { StrictMode, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
@@ -17,7 +17,13 @@ function App() {
     }
   }, [auth.userInfo, auth.token]);
 
-  return <Routes />;
+  return (
+    <>
+      <StrictMode>
+        <Routes />
+      </StrictMode>
+    </>
+  );
 }
 
 export default App;
