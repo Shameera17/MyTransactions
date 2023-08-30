@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <StrictMode>
-        <Routes />
+        <Routes isLoggedIn={auth?.userInfo && auth?.token ? true : false} />
       </StrictMode>
     </>
   );

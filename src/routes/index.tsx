@@ -1,6 +1,10 @@
 import React, { Suspense } from "react";
 
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter
+} from "react-router-dom";
 
 const Home = React.lazy(() => import("components/pages/Home"));
 const Dashboard = React.lazy(() => import("components/pages/Dashboard"));
@@ -26,7 +30,7 @@ const SetNewPassword = React.lazy(
   () => import("components/pages/SetNewPassword")
 );
 
-const Routes = () => {
+const Routes = (props: { isLoggedIn: boolean }) => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -44,7 +48,7 @@ const Routes = () => {
     },
     {
       path: "/app",
-      element: <Layout />,
+      element: props.isLoggedIn ? <Layout /> : <Navigate to="/signin" />,
       errorElement: <PageNotFound />,
       children: [
         { path: "dashboard", element: <Dashboard /> },
