@@ -3,7 +3,9 @@ import SecondaryButton from "./Button/Secondary";
 import Date from "./Input/Date";
 import Email from "./Input/Email";
 import FileInput from "./Input/File";
+import Number from "./Input/Number";
 import Password from "./Input/Password";
+import RadioButton from "./Input/RadioButton";
 import Text from "./Input/Text";
 import TextArea from "./Input/TextArea";
 import MenuWrapperItem from "./Menu/Item";
@@ -21,8 +23,10 @@ export {
   LinkSentence,
   MenuWrapper,
   MenuWrapperItem,
+  Number,
   Password,
   PrimaryButton,
+  RadioButton,
   SecondaryButton,
   Text,
   TextArea,

@@ -7,11 +7,12 @@ export type ITypes = IType[];
 
 export interface ITransaction {
   id?: string;
-  name: string;
+  name?: string;
   description: string;
   amount: number;
   userId: string;
   transactionTypeId: string;
+  createdDate: string;
 }
 
 export interface ICreatedTransaction {
@@ -19,7 +20,7 @@ export interface ICreatedTransaction {
   name: string;
   description: string;
   amount: number;
-  date: string;
+  createdDate: string;
   type: IType;
 }
 

@@ -1,5 +1,7 @@
 import { Layout } from "antd";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { viewModal } from "store/reducers/transaction.reducer";
 
 import { PrimaryButton } from "components/atoms";
 import LoggedInUser from "components/molecules/LoggedInUser";
@@ -10,6 +12,7 @@ import { ReactComponent as ExpenseTracker } from "../../../images/ExpenseTracker
 const SideBar = () => {
   const { Sider } = Layout;
   const { t } = useTranslation("common");
+  const dispatch = useDispatch();
   return (
     <Sider
       id="Sider"
@@ -35,7 +38,9 @@ const SideBar = () => {
       <div className="add-expense-button p-1 my-6">
         <PrimaryButton
           className=" w-full whitespace-pre-line h-auto"
-          onClick={function (): void {}}
+          onClick={() => {
+            dispatch(viewModal(true));
+          }}
           buttonName={t("button.add-new")}
         />
       </div>

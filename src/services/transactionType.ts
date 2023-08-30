@@ -1,8 +1,12 @@
-const authURL = `${process.env.BASE_URL}/Auth`;
-export const login = ({
-  email,
-  password
-}: {
-  email: string;
-  password: string;
-}) => {};
+import { ITransactionType } from "interfaces/User";
+
+import axiosInstance from "./axiosInstance";
+
+export const getTransactionTypes = async (): Promise<ITransactionType[]> => {
+  try {
+    const response = await axiosInstance.get("TransactionType");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

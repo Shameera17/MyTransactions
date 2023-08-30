@@ -1,24 +1,78 @@
+import { ITransaction, TransactionList } from "interfaces/Expense";
+
 import axiosInstance from "./axiosInstance";
 
-const authURL = `${process.env.BASE_URL}/Auth`;
-export const login = ({
-  email,
-  password
-}: {
-  email: string;
-  password: string;
-}) => {};
-export const getdata = async () => {
+export const getdata = async (
+  userId: string,
+  status: number,
+  month: number,
+  year: number,
+  authToken: string
+): Promise<TransactionList> => {
   try {
-    // const response = await axiosInstance.post(API_ENDPOINTS.login, credentials);
+    const headers = {
+      Authorization: `Bearer ${authToken}`
+    };
     const response = await axiosInstance.get(`Transaction/filter`, {
+      headers: headers,
       params: {
-        UserId: "027DE207-9741-4122-BA83-08DBA3151F0D",
-        Status: 1
+        userId,
+        status,
+        month,
+        year
       }
     });
     return response.data;
   } catch (error) {
-    console.log(error);
+    throw error;
+  }
+};
+export const create = async (
+  record: ITransaction,
+  authToken: string
+): Promise<TransactionList> => {
+  try {
+    const headers = {
+      Authorization: `Bearer ${authToken}`
+    };
+    const response = await axiosInstance.post(`Transaction/create`, record, {
+      headers: headers
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const update = async (
+  record: ITransaction,
+  authToken: string
+): Promise<TransactionList> => {
+  try {
+    const headers = {
+      Authorization: `Bearer ${authToken}`
+    };
+    const response = await axiosInstance.put(
+      `Transaction/update/${record.id}`,
+      record,
+      {
+        headers: headers
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const remove = async (id: string, authToken: string): Promise<any> => {
+  try {
+    const headers = {
+      Authorization: `Bearer ${authToken}`
+    };
+    const response = await axiosInstance.put(`Transaction/remove/${id}`, {
+      headers: headers
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
   }
 };

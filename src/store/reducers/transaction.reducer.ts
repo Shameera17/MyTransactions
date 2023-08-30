@@ -1,16 +1,19 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { ITransactionType } from "interfaces/User";
 import { iTransaction } from "store/types/transaction.types";
 
 type InitialState = {
   transaction: iTransaction;
   transactions: iTransaction[] | [];
   isModalOpen: boolean;
+  transactionTypes: ITransactionType[] | [];
 };
 
 const initialState: InitialState = {
   transaction: {},
   transactions: [],
-  isModalOpen: false
+  isModalOpen: false,
+  transactionTypes: []
 };
 
 const transactionSlice = createSlice({
@@ -29,11 +32,19 @@ const transactionSlice = createSlice({
     },
     viewModal: (state, action: PayloadAction<boolean>) => {
       state.isModalOpen = action.payload;
+    },
+    setTransactionTypes: (state, action: PayloadAction<ITransactionType[]>) => {
+      state.transactionTypes = action.payload;
     }
   }
 });
 
 export default transactionSlice.reducer;
 
-export const { savedTransaction, savedTransations, newTransaction, viewModal } =
-  transactionSlice.actions;
+export const {
+  savedTransaction,
+  setTransactionTypes,
+  savedTransations,
+  newTransaction,
+  viewModal
+} = transactionSlice.actions;

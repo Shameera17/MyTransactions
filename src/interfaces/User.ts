@@ -11,3 +11,9 @@ export interface IUser extends ILogin {
 export interface ILoginResponse {
   token: string;
 }
+
+export interface ITransactionType {
+  id: string;
+  name: string;
+  code: string;
+}
