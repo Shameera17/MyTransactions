@@ -31,7 +31,7 @@ const SideBar = () => {
         <ExpenseTracker />
       </div>
       {/* logged user */}
-      <div className="logged-user-vertical">
+      <div className="logged-user-vertical clear-both">
         <LoggedInUser />
       </div>
       {/* create transaction */}

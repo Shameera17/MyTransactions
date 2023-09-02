@@ -1,9 +1,13 @@
 import { Avatar } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
+import { signout } from "store/reducers/auth.reducer";
+
+import { LinkSentence } from "components/atoms";
 
 const LoggedInUser = () => {
   const { userInfo } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
   return (
     <div
       style={{
@@ -51,6 +55,14 @@ const LoggedInUser = () => {
             letterSpacing: "0.025rem"
           }}
         >{`${userInfo?.email || ""}`}</p>
+        <LinkSentence
+          onClick={() => {
+            dispatch(signout());
+          }}
+          level={2}
+          className="flex justify-start "
+          description={"Sign out"}
+        />
       </div>
     </div>
   );

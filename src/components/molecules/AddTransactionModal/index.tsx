@@ -3,7 +3,7 @@ import { useForm } from "antd/es/form/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { create } from "services/transaction";
 import { RootState } from "store";
-import { viewModal } from "store/reducers/transaction.reducer";
+import { refresh, viewModal } from "store/reducers/transaction.reducer";
 
 import {
   Date,
@@ -28,6 +28,7 @@ const AddTransactionModal = () => {
             showNotification("success", "Success", "Transaction created!");
             form.resetFields();
             dispatch(viewModal(false));
+            dispatch(refresh());
           })
           .catch(error => {
             showNotification(
@@ -71,7 +72,7 @@ const AddTransactionModal = () => {
           />
           <PrimaryButton
             className="w-full"
-            buttonName={"Add Expense"}
+            buttonName={"Add"}
             htmlType="submit"
           />
         </div>

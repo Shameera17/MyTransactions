@@ -3,7 +3,7 @@ import { GeneralForm, SecurityForm } from "components/molecules";
 
 const Settings = () => {
   return (
-    <div className="grid  w-1/2 gap-y-10 my-5 ">
+    <div className="grid w-1/2 gap-y-10 ">
       <div>
         <GeneralForm onSubmit={() => {}} />
       </div>

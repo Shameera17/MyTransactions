@@ -1,4 +1,4 @@
-import { ITransaction, TransactionList } from "interfaces/Expense";
+import { IStat, ITransaction, TransactionList } from "interfaces/Expense";
 
 import axiosInstance from "./axiosInstance";
 
@@ -18,6 +18,29 @@ export const getdata = async (
       params: {
         userId,
         status,
+        month,
+        year
+      }
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const getStatdata = async (
+  userId: string,
+  month: number,
+  year: number,
+  authToken: string
+): Promise<IStat> => {
+  try {
+    const headers = {
+      Authorization: `Bearer ${authToken}`
+    };
+    const response = await axiosInstance.get(`Transaction/stats`, {
+      headers: headers,
+      params: {
+        userId,
         month,
         year
       }

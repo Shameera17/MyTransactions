@@ -16,7 +16,9 @@ const Login = () => {
   const { userInfo, token } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
-    if (userInfo && token) navigate("/app/dashboard");
+    if (userInfo?.email && token) {
+      navigate("/app/dashboard");
+    }
   }, [userInfo, token]);
   const { t } = useTranslation(["glossary"]);
   return (

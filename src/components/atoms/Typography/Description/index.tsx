@@ -7,12 +7,12 @@ interface DescriptionProps {
   className?: string;
   level?: number;
 }
-const Description: React.FC<DescriptionProps> = ({
+export const Description: React.FC<DescriptionProps> = ({
   description,
   className,
   level
 }) => {
-  const { Paragraph, Link } = Typography;
+  const { Paragraph } = Typography;
 
   return (
     <Paragraph
@@ -30,4 +30,27 @@ const Description: React.FC<DescriptionProps> = ({
     </Paragraph>
   );
 };
-export default Description;
+export const CardDescription: React.FC<DescriptionProps> = ({
+  description,
+  className,
+  level
+}) => {
+  const { Paragraph } = Typography;
+
+  return (
+    <Paragraph
+      className={`text-night ${className}`}
+      style={{
+        textAlign: "right",
+        fontSize: "14px",
+        fontStyle: "normal",
+        fontWeight: "300",
+        lineHeight: "normal",
+        letterSpacing: "0.4px",
+        alignSelf: "stretch"
+      }}
+    >
+      {description}
+    </Paragraph>
+  );
+};

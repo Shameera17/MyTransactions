@@ -1,6 +1,10 @@
 import { DatePicker, Typography } from "antd";
+import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { RootState } from "store";
+import { setFilterCriteria } from "store/reducers/transaction.reducer";
 
 import { PrimaryButton } from "components/atoms";
 import { SelectLanguage } from "components/molecules";
@@ -8,9 +12,12 @@ import { SelectLanguage } from "components/molecules";
 const HeaderContent = () => {
   const location = useLocation();
   const path = location.pathname.replace("/app/", "");
-
+  const filterCriteria = useSelector(
+    (state: RootState) => state.transaction.filterCriteria
+  );
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-
+  const defaultDate = dayjs(`${filterCriteria.year}-${filterCriteria.month}`);
   return (
     <div className="flex justify-between align-middle ">
       <div
@@ -39,7 +46,22 @@ const HeaderContent = () => {
 
       {path === "dashboard" ? (
         <div>
-          <DatePicker picker="month" format={"MMM-YYYY"} className=" mr-4" />
+          <DatePicker
+            defaultValue={defaultDate}
+            picker="month"
+            format={"MMM YYYY"}
+            onChange={(date, dateString) => {
+              if (date) {
+                const selectedDate = dayjs(dateString, { locale: "en" });
+                dispatch(
+                  setFilterCriteria({
+                    month: Number(selectedDate.format("MM")),
+                    year: Number(selectedDate.format("YYYY"))
+                  })
+                );
+              }
+            }}
+          />
           <PrimaryButton
             onClick={function (): void {}}
             buttonName={t("button.add-new")}

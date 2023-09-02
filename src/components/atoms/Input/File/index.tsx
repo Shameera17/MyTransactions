@@ -1,6 +1,5 @@
 import React from "react";
 
-import { UploadOutlined } from "@ant-design/icons";
 import { Form, Upload } from "antd";
 import { Rule } from "antd/lib/form";
 
@@ -27,9 +26,7 @@ const FileInput: React.FC<FileInputProps> = ({ name, label, rules }) => {
       getValueFromEvent={e => e.fileList}
     >
       <Upload beforeUpload={beforeUpload} multiple={false}>
-        <span>
-          <UploadOutlined /> Click to upload
-        </span>
+        <span>{/* <UploadOutlined /> Click to upload */}</span>
       </Upload>
     </Form.Item>
   );

@@ -25,3 +25,11 @@ export interface ICreatedTransaction {
 }
 
 export type TransactionList = ICreatedTransaction[];
+export interface IStat {
+  totalIncome: number;
+  incomeCount: number;
+  totalExpenses: number;
+  expenseCount: number;
+  previousIncomes: number;
+  previousIncomeCount: number;
+}

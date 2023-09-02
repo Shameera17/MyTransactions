@@ -8,13 +8,25 @@ type InitialState = {
   transactions: TransactionList | [];
   isModalOpen: boolean;
   transactionTypes: ITransactionType[] | [];
+  filterCriteria: {
+    status: number;
+    month: number;
+    year: number;
+  };
+  refresh: boolean;
 };
 
 const initialState: InitialState = {
   transaction: {},
   transactions: [],
   isModalOpen: false,
-  transactionTypes: []
+  transactionTypes: [],
+  filterCriteria: {
+    status: 1,
+    month: new Date().getMonth() + 1,
+    year: new Date().getFullYear()
+  },
+  refresh: false
 };
 
 const transactionSlice = createSlice({
@@ -36,6 +48,25 @@ const transactionSlice = createSlice({
     },
     setTransactionTypes: (state, action: PayloadAction<ITransactionType[]>) => {
       state.transactionTypes = action.payload;
+    },
+    setFilterCriteria: (
+      state,
+      action: PayloadAction<{
+        userId?: string;
+        month?: number;
+        year?: number;
+      }>
+    ) => {
+      if (action.payload.month) {
+        state.filterCriteria.month = action.payload.month;
+      }
+      if (action.payload.year) {
+        state.filterCriteria.year = action.payload.year;
+      }
+    },
+
+    refresh: state => {
+      state.refresh = !state.refresh;
     }
   }
 });
@@ -47,5 +78,7 @@ export const {
   setTransactionTypes,
   savedTransations,
   newTransaction,
-  viewModal
+  viewModal,
+  setFilterCriteria,
+  refresh
 } = transactionSlice.actions;

@@ -22,7 +22,8 @@ const contentStyle: React.CSSProperties = {
   minHeight: 120,
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "white"
+  backgroundColor: "white",
+  overflow: "auto"
 };
 
 const fontStyle: React.CSSProperties = {

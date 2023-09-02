@@ -23,7 +23,13 @@ const Layout: React.FC = () => {
         <Header className=" bg-white mx-4 h-8 " style={{ padding: 0 }}>
           <HeaderContent />
         </Header>
-        <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+        <Content
+          className="py-9"
+          style={{
+            marginLeft: "18px",
+            overflow: "auto"
+          }}
+        >
           <Outlet />
         </Content>
         <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>

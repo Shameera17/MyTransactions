@@ -11,11 +11,12 @@ import TextArea from "./Input/TextArea";
 import MenuWrapperItem from "./Menu/Item";
 import MenuWrapper from "./Menu/Wrapper";
 import { showNotification } from "./Notification";
-import Description from "./Typography/Description";
+import { CardDescription, Description } from "./Typography/Description";
 import LinkSentence from "./Typography/Link";
-import Title from "./Typography/Title";
+import { Title, TitleMain } from "./Typography/Title";
 
 export {
+  CardDescription,
   Date,
   Description,
   Email,
@@ -31,5 +32,6 @@ export {
   Text,
   TextArea,
   Title,
+  TitleMain,
   showNotification
 };

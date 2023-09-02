@@ -22,7 +22,7 @@ const RadioButton: FC<RadioButtonProps> = ({ name }) => {
         style={{
           width: "100%"
         }}
-        defaultValue="a"
+        defaultValue={list[0].id}
         buttonStyle="solid"
       >
         {list.map(type => {

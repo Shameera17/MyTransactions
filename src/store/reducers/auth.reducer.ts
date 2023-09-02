@@ -21,8 +21,9 @@ const authSlice = createSlice({
       state.userInfo = action.payload;
     },
     signout: state => {
+      localStorage.removeItem("token");
       state.userInfo = null;
-      localStorage.removeItem("userInfo");
+      state.token = null;
     },
     setToken(state, action: PayloadAction<{ token: string }>) {
       console.log(action.payload.token);
@@ -32,9 +33,7 @@ const authSlice = createSlice({
     manageModal(state) {
       state.isModalVisible = !state.isModalVisible;
     },
-    clearToken(state) {
-      state.token = null;
-    },
+
     updateAction(state, action: PayloadAction<IAction>) {
       state.action = action.payload;
     },
@@ -64,7 +63,6 @@ export const {
   setUserInfo,
   signout,
   setToken,
-  clearToken,
   updateAction,
   resetAction,
   manageModal,

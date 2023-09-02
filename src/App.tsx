@@ -1,4 +1,4 @@
-import { StrictMode, useEffect } from "react";
+import { StrictMode, Suspense, useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getTransactionTypes } from "services/transactionType";
@@ -6,6 +6,7 @@ import { RootState } from "store";
 import { refreshAuthToken } from "store/reducers/auth.reducer";
 import { setTransactionTypes } from "store/reducers/transaction.reducer";
 
+import { Loading } from "components/molecules";
 import AddTransactionModal from "components/molecules/AddTransactionModal";
 
 import "./App.css";
@@ -35,8 +36,10 @@ function App() {
   return (
     <>
       <StrictMode>
-        <Routes isLoggedIn={auth?.userInfo && auth?.token ? true : false} />
-        <AddTransactionModal />
+        <Suspense fallback={<Loading />}>
+          <Routes isLoggedIn={auth?.userInfo && auth?.token ? true : false} />
+          <AddTransactionModal />
+        </Suspense>
       </StrictMode>
     </>
   );
