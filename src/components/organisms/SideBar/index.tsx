@@ -18,7 +18,7 @@ const SideBar = () => {
       id="Sider"
       className=" px-6 flex gap-y-4 pt-8 border-r-2 border-lightBlue"
       style={{
-        overflow: "auto",
+        overflow: "hidden",
         position: "absolute",
         left: 0,
         top: 0,

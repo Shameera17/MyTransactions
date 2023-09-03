@@ -28,5 +28,5 @@
 
 .scrollable-element::-webkit-scrollbar-thumb {
   background-color: darkgrey;
-  /* outline: 0.5px solid slategrey; */
+  border-radius: 10px;
 }

@@ -45,21 +45,12 @@ const LoggedInUser = () => {
         >{`${userInfo?.firstName || ""} ${
           (userInfo && userInfo?.lastName) || ""
         }`}</p>
-        <p
-          style={{
-            color: "#D9D9D9",
-            fontSize: "0.625rem",
-            fontStyle: "normal",
-            fontWeight: 500,
-            lineHeight: "normal",
-            letterSpacing: "0.025rem"
-          }}
-        >{`${userInfo?.email || ""}`}</p>
+
         <LinkSentence
           onClick={() => {
             dispatch(signout());
           }}
-          level={2}
+          level={1}
           className="flex justify-start "
           description={"Sign out"}
         />

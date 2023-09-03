@@ -5,6 +5,8 @@ import { Outlet } from "react-router-dom";
 
 import { HeaderContent, SideBar } from "components/organisms";
 
+import "./style.css";
+
 const { Header, Content, Footer } = Wrapper;
 
 const Layout: React.FC = () => {
@@ -24,10 +26,10 @@ const Layout: React.FC = () => {
           <HeaderContent />
         </Header>
         <Content
-          className="py-9"
+          className="py-9 scrollable-element"
           style={{
             marginLeft: "18px",
-            overflow: "hidden"
+            overflow: "auto"
           }}
         >
           <Outlet />
