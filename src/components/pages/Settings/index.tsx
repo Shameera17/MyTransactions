@@ -1,7 +1,18 @@
-import { Description, SecondaryButton } from "components/atoms";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "services/user";
+import { RootState } from "store";
+import { signout } from "store/reducers/auth.reducer";
+
+import {
+  Description,
+  SecondaryButton,
+  showNotification
+} from "components/atoms";
 import { GeneralForm, SecurityForm } from "components/molecules";
 
 const Settings = () => {
+  const { userInfo, token } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
   return (
     <div className="grid w-1/2 gap-y-10 ">
       <div>
@@ -27,7 +38,28 @@ const Settings = () => {
           className=" text-danger text-center"
           description={"Delete user account"}
         />
-        <SecondaryButton className=" w-36" buttonName={"Delete"} />
+        <SecondaryButton
+          className=" w-36"
+          buttonName={"Delete"}
+          onClick={() => {
+            removeUser(userInfo?.id!, token!)
+              .then(result => {
+                showNotification(
+                  "success",
+                  "Success",
+                  result || "Account deleted"
+                );
+                dispatch(signout());
+              })
+              .catch(error => {
+                showNotification(
+                  "error",
+                  "Error",
+                  error.response.data || "Please try again!"
+                );
+              });
+          }}
+        />
       </div>
     </div>
   );

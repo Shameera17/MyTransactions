@@ -7,8 +7,9 @@ import { RootState } from "store";
 interface RadioButtonProps {
   name: string;
   label?: string;
+  id?: string;
 }
-const RadioButton: FC<RadioButtonProps> = ({ name }) => {
+const RadioButton: FC<RadioButtonProps> = ({ name, id }) => {
   const list = useSelector(
     (state: RootState) => state.transaction.transactionTypes
   );
@@ -17,12 +18,13 @@ const RadioButton: FC<RadioButtonProps> = ({ name }) => {
     <Form.Item
       rules={[{ required: true, message: "Please select an option" }]}
       name={name}
+      initialValue={id || list[0].id}
     >
       <Radio.Group
         style={{
           width: "100%"
         }}
-        defaultValue={list[0].id}
+        defaultValue={id || list[0].id}
         buttonStyle="solid"
       >
         {list.map(type => {

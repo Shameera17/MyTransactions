@@ -5,9 +5,13 @@ import type { ColumnsType } from "antd/es/table";
 import dayjs from "dayjs";
 import { ICreatedTransaction, IStat } from "interfaces/Expense";
 import { useDispatch, useSelector } from "react-redux";
-import { getStatdata, getdata } from "services/transaction";
+import { getStatdata, getdata, remove } from "services/transaction";
 import { RootState } from "store";
-import { savedTransations } from "store/reducers/transaction.reducer";
+import {
+  editTransaction,
+  savedTransations,
+  refresh as setRefresh
+} from "store/reducers/transaction.reducer";
 
 import { showNotification } from "components/atoms";
 import StatBox from "components/molecules/StatBox";
@@ -63,6 +67,74 @@ const Dashboard: React.FC = () => {
     setloading(false);
   }, [filterCriteria, userInfo?.id, refresh]);
 
+  const columns: ColumnsType<ICreatedTransaction> = [
+    {
+      title: "Item (description)",
+      dataIndex: "description",
+      key: "description",
+      render: text => <a>{text}</a>
+    },
+    {
+      title: "Amount",
+      dataIndex: "amount",
+      key: "amount"
+    },
+
+    {
+      title: "Type",
+      key: "tags",
+      dataIndex: "tags",
+      render: (_, { type }) => {
+        let color = type.code === "INCOME" ? "green" : "volcano";
+
+        return (
+          <Tag color={color} key={type.code}>
+            {type.name}
+          </Tag>
+        );
+      }
+    },
+    {
+      title: "Date",
+      dataIndex: "createdDate",
+      key: "createdDate",
+      render(value, record, index) {
+        return <Space>{new Date(value).toDateString()}</Space>;
+      }
+    },
+    {
+      title: "Actions",
+      key: "action",
+      render: (_, record) => (
+        <Space size="middle">
+          <a onClick={() => dispatch(editTransaction(record))}>Edit</a>
+          <a
+            onClick={async () =>
+              await remove(record.transactionId, token!)
+                .then(result => {
+                  showNotification(
+                    "warning",
+                    "Success",
+                    result || "Record removed successfully!"
+                  );
+                  dispatch(setRefresh());
+                })
+                .catch(error => {
+                  showNotification(
+                    "error",
+                    "Error",
+                    error?.response?.data || "Please refresh page!"
+                  );
+                })
+            }
+          >
+            Delete
+          </a>
+        </Space>
+      )
+    }
+  ];
+
   return (
     <div className="container">
       <div className="flex gap-3.5 fixed-element">
@@ -99,17 +171,12 @@ const Dashboard: React.FC = () => {
           count={0}
         />
       </div>
-      <div className="scrollable-element">
+      <div className="scrollable-element w-full">
         <Table
           loading={loading}
           rowKey={record => record.transactionId}
-          // size="small"
           columns={columns}
           dataSource={transactions}
-          pagination={{
-            current: 1,
-            pageSize: 10
-          }}
         />
       </div>
     </div>
@@ -117,50 +184,3 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
-
-const columns: ColumnsType<ICreatedTransaction> = [
-  {
-    title: "Item (description)",
-    dataIndex: "description",
-    key: "description",
-    render: text => <a>{text}</a>
-  },
-  {
-    title: "Amount",
-    dataIndex: "amount",
-    key: "amount"
-  },
-
-  {
-    title: "Type",
-    key: "tags",
-    dataIndex: "tags",
-    render: (_, { type }) => {
-      let color = type.code === "INCOME" ? "green" : "volcano";
-
-      return (
-        <Tag color={color} key={type.code}>
-          {type.name}
-        </Tag>
-      );
-    }
-  },
-  {
-    title: "Date",
-    dataIndex: "createdDate",
-    key: "createdDate",
-    render(value, record, index) {
-      return <Space>{new Date(value).toDateString()}</Space>;
-    }
-  },
-  {
-    title: "Actions",
-    key: "action",
-    render: (_, record) => (
-      <Space size="middle">
-        <a>Edit</a>
-        <a>Delete</a>
-      </Space>
-    )
-  }
-];

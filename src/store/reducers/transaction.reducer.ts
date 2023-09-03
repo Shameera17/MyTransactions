@@ -1,12 +1,15 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { TransactionList } from "interfaces/Expense";
+import { ICreatedTransaction, TransactionList } from "interfaces/Expense";
 import { ITransactionType } from "interfaces/User";
-import { iTransaction } from "store/types/transaction.types";
 
 type InitialState = {
-  transaction: iTransaction;
   transactions: TransactionList | [];
-  isModalOpen: boolean;
+  isModalOpen: {
+    flag: boolean;
+    // below properties need for edit
+    mode: "edit" | undefined;
+    record: ICreatedTransaction | undefined;
+  };
   transactionTypes: ITransactionType[] | [];
   filterCriteria: {
     status: number;
@@ -17,9 +20,12 @@ type InitialState = {
 };
 
 const initialState: InitialState = {
-  transaction: {},
   transactions: [],
-  isModalOpen: false,
+  isModalOpen: {
+    flag: false,
+    mode: undefined,
+    record: undefined
+  },
   transactionTypes: [],
   filterCriteria: {
     status: 1,
@@ -37,14 +43,16 @@ const transactionSlice = createSlice({
       state.transactions = action.payload;
     },
 
-    savedTransaction: (state, action: PayloadAction<iTransaction>) => {
-      state.transaction = action.payload;
+    editTransaction: (state, action: PayloadAction<ICreatedTransaction>) => {
+      state.isModalOpen = { flag: true, mode: "edit", record: action.payload };
     },
-    newTransaction: (state, action: PayloadAction<iTransaction>) => {
-      state.transaction = action.payload;
-    },
+
     viewModal: (state, action: PayloadAction<boolean>) => {
-      state.isModalOpen = action.payload;
+      if (state.isModalOpen.mode === "edit") {
+        state.isModalOpen = { flag: false, mode: undefined, record: undefined };
+      } else {
+        state.isModalOpen.flag = action.payload;
+      }
     },
     setTransactionTypes: (state, action: PayloadAction<ITransactionType[]>) => {
       state.transactionTypes = action.payload;
@@ -74,10 +82,9 @@ const transactionSlice = createSlice({
 export default transactionSlice.reducer;
 
 export const {
-  savedTransaction,
+  editTransaction,
   setTransactionTypes,
   savedTransations,
-  newTransaction,
   viewModal,
   setFilterCriteria,
   refresh

@@ -43,3 +43,18 @@ export const isUserExist = async (email: string): Promise<any> => {
     throw error;
   }
 };
+export const removeUser = async (
+  id: string,
+  authToken: string
+): Promise<any> => {
+  try {
+    const response = await axiosInstance.put(
+      `User/${id}`,
+      {},
+      { headers: { Authorization: `Bearer ${authToken}` } }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

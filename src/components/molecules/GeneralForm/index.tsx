@@ -4,7 +4,6 @@ import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { RootState } from "store";
 
 import { PrimaryButton, Text } from "components/atoms";
@@ -21,7 +20,6 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ onSubmit }) => {
   const handleFinish = (values: any) => {
     onSubmit(values);
   };
-  const navigate = useNavigate();
 
   const handleFinishFailed = (errorInfo: any) => {
     console.log("Form validation failed:", errorInfo);
@@ -42,7 +40,6 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ onSubmit }) => {
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
       </Form>
       <PrimaryButton
-        disabled={form.isFieldsTouched()}
         height="40px"
         size="middle"
         onClick={() => {

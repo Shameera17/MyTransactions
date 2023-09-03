@@ -63,6 +63,7 @@ const HeaderContent = () => {
             }}
           />
           <PrimaryButton
+            className=" ml-2"
             onClick={function (): void {}}
             buttonName={t("button.add-new")}
           />

@@ -69,7 +69,7 @@ export const create = async (
 export const update = async (
   record: ITransaction,
   authToken: string
-): Promise<TransactionList> => {
+): Promise<string> => {
   try {
     const headers = {
       Authorization: `Bearer ${authToken}`
@@ -88,12 +88,13 @@ export const update = async (
 };
 export const remove = async (id: string, authToken: string): Promise<any> => {
   try {
-    const headers = {
-      Authorization: `Bearer ${authToken}`
-    };
-    const response = await axiosInstance.put(`Transaction/remove/${id}`, {
-      headers: headers
-    });
+    const response = await axiosInstance.put(
+      `Transaction/remove/${id}`,
+      {},
+      {
+        headers: { Authorization: `Bearer ${authToken}` }
+      }
+    );
     return response.data;
   } catch (error) {
     throw error;

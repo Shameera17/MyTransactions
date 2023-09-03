@@ -1,7 +1,10 @@
+import { useEffect } from "react";
+
 import { Form, Modal } from "antd";
 import { useForm } from "antd/es/form/Form";
+import dayjs from "dayjs";
 import { useDispatch, useSelector } from "react-redux";
-import { create } from "services/transaction";
+import { create, update } from "services/transaction";
 import { RootState } from "store";
 import { refresh, viewModal } from "store/reducers/transaction.reducer";
 
@@ -40,26 +43,39 @@ const AddTransactionModal = () => {
     });
   };
 
-  const handleFinishFailed = (errorInfo: any) => {
-    console.log("Form validation failed:", errorInfo);
-  };
+  useEffect(() => {
+    if (isModalOpen.flag && isModalOpen.mode === "edit" && isModalOpen.record) {
+      form.setFieldsValue({
+        description: isModalOpen.record.description,
+        amount: isModalOpen.record.amount,
+        transactionTypeId: isModalOpen.record.type.id,
+        createdDate: dayjs(isModalOpen.record.createdDate)
+      });
+    }
+  }, [isModalOpen]);
+
   return (
     <Modal
       centered
-      open={isModalOpen}
+      open={isModalOpen.flag}
       okButtonProps={{ style: { display: "none" } }}
       cancelButtonProps={{ style: { display: "none" } }}
       closeIcon={undefined}
       closable={false} // Hide the close button
-      onCancel={() => dispatch(viewModal(false))}
+      onCancel={() => {
+        dispatch(viewModal(false));
+        form.resetFields();
+      }}
     >
-      <Form
-        form={form}
-        onFinish={handleFinish}
-        onFinishFailed={handleFinishFailed}
-        onValuesChange={(e, f) => console.log(f)}
-      >
-        <RadioButton name="transactionTypeId" />
+      <Form form={form} onFinish={handleFinish}>
+        <RadioButton
+          id={
+            isModalOpen.flag && isModalOpen.record?.type?.id
+              ? isModalOpen.record?.type?.id
+              : undefined
+          }
+          name="transactionTypeId"
+        />
         <Number placeholder="Amount" name="amount" />
         <Date name="createdDate" />
         <TextArea placeholder="Description" name={"description"} />
@@ -68,13 +84,51 @@ const AddTransactionModal = () => {
             className="w-full"
             buttonName={"Cancel"}
             ghost
-            onClick={() => dispatch(viewModal(false))}
+            onClick={() => {
+              dispatch(viewModal(false));
+              form.resetFields();
+            }}
           />
-          <PrimaryButton
-            className="w-full"
-            buttonName={"Add"}
-            htmlType="submit"
-          />
+          {isModalOpen.mode !== "edit" && (
+            <PrimaryButton
+              className="w-full"
+              buttonName={"Add"}
+              htmlType="submit"
+            />
+          )}
+          {isModalOpen.mode === "edit" && (
+            <PrimaryButton
+              className="w-full"
+              buttonName={"Update"}
+              onClick={() => {
+                update(
+                  {
+                    id: isModalOpen.record?.transactionId,
+                    ...form.getFieldsValue()
+                  },
+
+                  token!
+                )
+                  .then(result => {
+                    showNotification(
+                      "success",
+                      "Success",
+                      result || "Transaction created!"
+                    );
+                    form.resetFields();
+                    dispatch(viewModal(false));
+                    dispatch(refresh());
+                  })
+                  .catch(error => {
+                    showNotification(
+                      "error",
+                      "Error",
+                      error.response.data || "Please try again!"
+                    );
+                  });
+              }}
+            />
+          )}
         </div>
       </Form>
     </Modal>
