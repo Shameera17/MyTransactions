@@ -12,6 +12,8 @@ import { savedTransations } from "store/reducers/transaction.reducer";
 import { showNotification } from "components/atoms";
 import StatBox from "components/molecules/StatBox";
 
+import "./style.css";
+
 const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -20,10 +22,11 @@ const Dashboard: React.FC = () => {
   );
 
   const { userInfo, token } = useSelector((state: RootState) => state.auth);
-
+  const [loading, setloading] = useState(false);
   const [stats, setStats] = useState<IStat>();
 
   useEffect(() => {
+    setloading(true);
     getdata(
       userInfo?.id!,
       filterCriteria.status,
@@ -57,11 +60,12 @@ const Dashboard: React.FC = () => {
           error?.response?.data || "Please refresh page!"
         );
       });
+    setloading(false);
   }, [filterCriteria, userInfo?.id, refresh]);
 
   return (
-    <>
-      <div className="flex gap-3.5">
+    <div className="container">
+      <div className="flex gap-3.5 fixed-element">
         <StatBox
           type={"income"}
           title={"All income"}
@@ -95,8 +99,20 @@ const Dashboard: React.FC = () => {
           count={0}
         />
       </div>
-      <Table columns={columns} dataSource={transactions} />
-    </>
+      <div className="scrollable-element">
+        <Table
+          loading={loading}
+          rowKey={record => record.transactionId}
+          // size="small"
+          columns={columns}
+          dataSource={transactions}
+          pagination={{
+            current: 1,
+            pageSize: 10
+          }}
+        />
+      </div>
+    </div>
   );
 };
 

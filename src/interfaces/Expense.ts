@@ -17,6 +17,7 @@ export interface ITransaction {
 
 export interface ICreatedTransaction {
   id: string;
+  transactionId: string;
   name: string;
   description: string;
   amount: number;

@@ -27,7 +27,7 @@ const Layout: React.FC = () => {
           className="py-9"
           style={{
             marginLeft: "18px",
-            overflow: "auto"
+            overflow: "hidden"
           }}
         >
           <Outlet />
