@@ -8,23 +8,16 @@ import { useTranslation } from "react-i18next";
 import { Password, PrimaryButton } from "../../atoms";
 
 interface SecurityFormProps {
-  onSubmit: (values: any) => void;
+  onSubmit: (values: any, reset: any) => void;
 }
 
 const SecurityForm: React.FC<SecurityFormProps> = ({ onSubmit }) => {
   const [form] = useForm();
   const { t } = useTranslation();
 
-  const handleFinish = (values: any) => {
-    form.validateFields().then(() => {
-      onSubmit(values);
-      form.resetFields();
-    });
-  };
-
   return (
     <>
-      <Form form={form} onFinish={handleFinish} className="grid gap-2">
+      <Form form={form} className="grid gap-2">
         <Password
           name={"oldPassword"}
           size="large"
@@ -51,7 +44,9 @@ const SecurityForm: React.FC<SecurityFormProps> = ({ onSubmit }) => {
       <PrimaryButton
         height="40px"
         onClick={() => {
-          form.validateFields().then(() => onSubmit(form.getFieldsValue()));
+          form
+            .validateFields()
+            .then(() => onSubmit(form.getFieldsValue(), form.resetFields));
         }}
         size="middle"
         htmlType="submit"

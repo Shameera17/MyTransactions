@@ -52,7 +52,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
       />
       <PrimaryButton
         htmlType="submit"
-        className=" mt-6"
+        className=" mt-6 w-full"
         height="40px"
         size="middle"
         onClick={() => {

@@ -35,9 +35,7 @@ export const forgotPassword = async (credentials: ILogin): Promise<any> => {
 };
 export const isUserExist = async (email: string): Promise<any> => {
   try {
-    const response = await axiosInstance.get("User", {
-      params: { email }
-    });
+    const response = await axiosInstance.get(`User/${email}`);
     return response.data;
   } catch (error) {
     throw error;

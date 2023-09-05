@@ -52,7 +52,7 @@ const OtherLayout = () => {
           </span>
         </div>
       </Header>
-      <Content className="" style={contentStyle}>
+      <Content className="mx-auto" style={contentStyle}>
         <Outlet />
       </Content>
       <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>

@@ -32,13 +32,14 @@ const Settings = () => {
       </div>
       <div>
         <SecurityForm
-          onSubmit={async formValues => {
+          onSubmit={async (formValues: any, reset) => {
             await updateUserPassword(
               { id: userInfo?.id!, ...formValues, email: userInfo?.email },
               token!
             )
               .then(result => {
                 showNotification("success", "Success", "Updated successully");
+                reset();
               })
               .catch(error => {
                 showNotification("error", "Error", "Please try again!");
@@ -64,8 +65,8 @@ const Settings = () => {
           description={"Delete user account"}
         />
         <Popconfirm
-          title="Delete the task"
-          description="Are you sure to delete you account?"
+          title="Confirmation"
+          description="Are you sure to delete your account?"
           onConfirm={confirm}
           okText="Yes"
           cancelText="No"
