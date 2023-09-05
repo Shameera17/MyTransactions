@@ -18,20 +18,13 @@ const SecurityForm: React.FC<SecurityFormProps> = ({ onSubmit }) => {
   const handleFinish = (values: any) => {
     form.validateFields().then(() => {
       onSubmit(values);
+      form.resetFields();
     });
   };
 
-  const handleFinishFailed = (errorInfo: any) => {
-    console.log("Form validation failed:", errorInfo);
-  };
   return (
     <>
-      <Form
-        form={form}
-        onFinish={handleFinish}
-        className="grid gap-2"
-        onFinishFailed={handleFinishFailed}
-      >
+      <Form form={form} onFinish={handleFinish} className="grid gap-2">
         <Password
           name={"oldPassword"}
           size="large"

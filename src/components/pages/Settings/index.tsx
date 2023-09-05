@@ -18,15 +18,11 @@ const Settings = () => {
   const confirm = () => {
     removeUser(userInfo?.id!, token!)
       .then(result => {
-        showNotification("success", "Success", result || "Account deleted");
+        showNotification("success", "Success", "Account deleted");
         dispatch(signout());
       })
       .catch(error => {
-        showNotification(
-          "error",
-          "Error",
-          error.response.data || "Please try again!"
-        );
+        showNotification("error", "Error", "Please try again!");
       });
   };
   return (
@@ -42,18 +38,10 @@ const Settings = () => {
               token!
             )
               .then(result => {
-                showNotification(
-                  "success",
-                  "Success",
-                  result || "Updated successully"
-                );
+                showNotification("success", "Success", "Updated successully");
               })
               .catch(error => {
-                showNotification(
-                  "error",
-                  "Error",
-                  error.response.data || "Please try again!"
-                );
+                showNotification("error", "Error", "Please try again!");
               });
           }}
         />
