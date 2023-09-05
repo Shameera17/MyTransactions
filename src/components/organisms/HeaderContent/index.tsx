@@ -4,7 +4,10 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { RootState } from "store";
-import { setFilterCriteria } from "store/reducers/transaction.reducer";
+import {
+  setFilterCriteria,
+  viewModal
+} from "store/reducers/transaction.reducer";
 
 import { PrimaryButton } from "components/atoms";
 import { SelectLanguage } from "components/molecules";
@@ -64,7 +67,9 @@ const HeaderContent = () => {
           />
           <PrimaryButton
             className=" ml-2"
-            onClick={function (): void {}}
+            onClick={() => {
+              dispatch(viewModal(true));
+            }}
             buttonName={t("button.add-new")}
           />
         </div>

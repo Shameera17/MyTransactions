@@ -166,6 +166,8 @@ const Dashboard: React.FC = () => {
               ? Number(
                   Number(stats?.totalIncome! - stats?.totalExpenses!).toFixed(2)
                 )
+              : stats?.totalIncome
+              ? Number(Number(stats?.totalIncome).toFixed(2))
               : 0
           }
           count={0}
