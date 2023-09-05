@@ -58,3 +58,43 @@ export const removeUser = async (
     throw error;
   }
 };
+export const updateUser = async (
+  user: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+  },
+  authToken: string
+): Promise<any> => {
+  try {
+    const response = await axiosInstance.put(
+      `Auth/updateUser`,
+      { ...user },
+      { headers: { Authorization: `Bearer ${authToken}` } }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const updateUserPassword = async (
+  user: {
+    id: string;
+    email: string;
+    oldPassword: string;
+    newPassword: string;
+  },
+  authToken: string
+): Promise<any> => {
+  try {
+    const response = await axiosInstance.put(
+      `Auth/updatePassword`,
+      { ...user },
+      { headers: { Authorization: `Bearer ${authToken}` } }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

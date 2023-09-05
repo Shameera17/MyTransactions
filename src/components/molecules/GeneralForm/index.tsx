@@ -3,38 +3,25 @@ import React, { useEffect } from "react";
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "services/user";
 import { RootState } from "store";
+import { setToken, setUserInfo } from "store/reducers/auth.reducer";
 
-import { PrimaryButton, Text } from "components/atoms";
+import { PrimaryButton, Text, showNotification } from "components/atoms";
 
-interface GeneralFormProps {
-  onSubmit: (values: any) => void;
-}
-
-const GeneralForm: React.FC<GeneralFormProps> = ({ onSubmit }) => {
+const GeneralForm: React.FC = () => {
   const [form] = useForm();
   const { t } = useTranslation(["common", "glossary", "validations"]);
-  const { userInfo } = useSelector((state: RootState) => state.auth);
-
-  const handleFinish = (values: any) => {
-    onSubmit(values);
-  };
-
-  const handleFinishFailed = (errorInfo: any) => {
-    console.log("Form validation failed:", errorInfo);
-  };
+  const { userInfo, token } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
   useEffect(() => {
     form.setFieldsValue(userInfo);
   }, [userInfo]);
 
   return (
     <>
-      <Form
-        form={form}
-        onFinish={handleFinish}
-        onFinishFailed={handleFinishFailed}
-      >
+      <Form form={form}>
         <Text name={"email"} size="large" label={t("form.email")} />
         <Text name={"firstName"} size="large" label={t("form.first-Name")} />
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
@@ -43,7 +30,33 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ onSubmit }) => {
         height="40px"
         size="middle"
         onClick={() => {
-          form.validateFields();
+          form.validateFields().then(async () => {
+            await updateUser(
+              {
+                id: userInfo?.id!,
+                ...form.getFieldsValue()
+              },
+              token!
+            )
+              .then(result => {
+                {
+                  dispatch(setToken({ token: result.token }));
+                  dispatch(setUserInfo(result.user));
+                  showNotification(
+                    "success",
+                    "Success",
+                    "Updated successfully"
+                  );
+                }
+              })
+              .catch(error => {
+                showNotification(
+                  "error",
+                  "Error",
+                  error.response.data || "Please try again!"
+                );
+              });
+          });
         }}
         buttonName={t("glossary:settings.save-changes").toUpperCase()}
       />

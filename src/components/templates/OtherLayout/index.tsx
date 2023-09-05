@@ -41,10 +41,7 @@ const footerStyle: React.CSSProperties = {
 };
 const OtherLayout = () => {
   return (
-    <Layout
-      className=" h-screen tablet:px-8 laptop:px-32 desktop:px-32"
-      style={screenStyle}
-    >
+    <Layout style={screenStyle}>
       <Header style={headerStyle}>
         <div className="demo-logo-vertical p-1 ">
           <span style={fontStyle} className=" text-crayola font-medium">
