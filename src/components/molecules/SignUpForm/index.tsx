@@ -2,7 +2,6 @@ import React from "react";
 
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
-import { validateConfirmPassword } from "helpers/formValidations";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -63,7 +62,14 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       <Password
         rules={[
           { required: true, message: "Please confirm your password." },
-          validateConfirmPassword
+          ({ getFieldValue }: any) => ({
+            validator(_: any, value: any) {
+              if (!value || getFieldValue("password") === value) {
+                return Promise.resolve();
+              }
+              return Promise.reject(new Error("Passwords do not match."));
+            }
+          })
         ]}
         name={"confirmPassword"}
         size="large"

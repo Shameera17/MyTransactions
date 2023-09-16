@@ -10,7 +10,17 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" grid grid-cols-2 gap-4 content-center">
+    <div
+      style={{
+        // position: "absolute",
+        // top: "50%",
+        left: "50%",
+        margin: "25px 25px 0 0",
+        display: "flex",
+        gap: 4
+      }}
+      // className=" grid grid-cols-2 gap-4 content-center"
+    >
       <LayoutImageCard screen="signup" />
       <div className="flex flex-col justify-center ">
         <div

@@ -33,4 +33,5 @@ export interface IStat {
   expenseCount: number;
   previousIncomes: number;
   previousIncomeCount: number;
+  RemainingBalance: number;
 }

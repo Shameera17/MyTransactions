@@ -7,9 +7,10 @@ interface StatBoxProps {
   type: "income" | "expense" | "bal" | "carried";
   title: string;
   amount: number;
-  count: number;
+  count?: number;
+  status?: string | undefined;
 }
-const StatBox: FC<StatBoxProps> = ({ title, type, amount, count }) => {
+const StatBox: FC<StatBoxProps> = ({ title, type, amount, count, status }) => {
   return (
     <div
       style={{
@@ -39,7 +40,9 @@ const StatBox: FC<StatBoxProps> = ({ title, type, amount, count }) => {
             : ""
         }`}
       />
-      <CardDescription description={`${count} records`} />
+      <CardDescription
+        description={status ? `${status}` : `${count} records`}
+      />
     </div>
   );
 };

@@ -55,7 +55,7 @@ const Dashboard: React.FC = () => {
       token!
     )
       .then(data => {
-        setStats(data);
+        setStats({ RemainingBalance: data?.RemainingBalance, ...data.stats });
       })
       .catch(error => {
         showNotification(
@@ -134,7 +134,6 @@ const Dashboard: React.FC = () => {
       )
     }
   ];
-
   return (
     <div className="container">
       <div className="flex gap-3.5 fixed-element">
@@ -159,18 +158,16 @@ const Dashboard: React.FC = () => {
           count={stats?.previousIncomeCount || 0}
         />
         <StatBox
-          type={"bal"}
+          type={Number(stats?.RemainingBalance!) > 0 ? "bal" : "expense"}
           title={"Balance Total"}
-          amount={
-            stats?.totalIncome && stats?.totalExpenses
-              ? Number(
-                  Number(stats?.totalIncome! - stats?.totalExpenses!).toFixed(2)
-                )
-              : stats?.totalIncome
-              ? Number(Number(stats?.totalIncome).toFixed(2))
-              : 0
+          amount={Number(stats?.RemainingBalance!) || 0}
+          status={
+            !stats?.totalExpenses! && !stats?.totalExpenses!
+              ? "0 balance"
+              : stats?.RemainingBalance! < 0
+              ? "In debt"
+              : "All good"
           }
-          count={0}
         />
       </div>
       <div className="scrollable-element w-full">

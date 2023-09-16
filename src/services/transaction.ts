@@ -1,4 +1,4 @@
-import { IStat, ITransaction, TransactionList } from "interfaces/Expense";
+import { ITransaction, TransactionList } from "interfaces/Expense";
 
 import axiosInstance from "./axiosInstance";
 
@@ -32,7 +32,7 @@ export const getStatdata = async (
   month: number,
   year: number,
   authToken: string
-): Promise<IStat> => {
+): Promise<any> => {
   try {
     const headers = {
       Authorization: `Bearer ${authToken}`
