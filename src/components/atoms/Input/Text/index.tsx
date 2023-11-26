@@ -1,7 +1,9 @@
-import { FormInstance, Form, Input } from "antd";
+import { FC } from "react";
+
+import { Form, Input } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 import { Rule } from "antd/es/form";
-import React, { FC } from "react";
+
 interface TextProps {
   name: string;
   label: string;
@@ -12,10 +14,11 @@ interface TextProps {
 
 const Text: FC<TextProps> = ({ name, label, rules, size, status }) => {
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` },
+    { required: true, message: `${label} is required` }
   ];
   return (
     <Form.Item
+      className="custom-form-item"
       name={name}
       rules={
         rules?.length
@@ -24,7 +27,7 @@ const Text: FC<TextProps> = ({ name, label, rules, size, status }) => {
       }
     >
       <Input
-        className=" border-cyan-500"
+        className=" border-cyan-500 "
         status={status}
         placeholder={label}
         size={size}

@@ -1,29 +1,47 @@
-import React from "react";
-import logo from "./logo.svg";
+import { StrictMode, Suspense, useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { getTransactionTypes } from "services/transactionType";
+import { RootState } from "store";
+import { refreshAuthToken } from "store/reducers/auth.reducer";
+import { setTransactionTypes } from "store/reducers/transaction.reducer";
+
+import { Loading } from "components/molecules";
+import AddTransactionModal from "components/molecules/AddTransactionModal";
+
 import "./App.css";
-import { useTranslation } from "react-i18next";
-import { Text } from "components/atoms";
-import LoginForm from "components/molecules/LoginForm";
+import "./i18n/i18n";
+import Routes from "./routes";
 
 function App() {
-  const { t, i18n } = useTranslation(["common", "glossary", "validations"]);
-  const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+  const auth = useSelector((state: RootState) => state.auth);
+  const types = useSelector(
+    (state: RootState) => state.transaction.transactionTypes
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!auth.userInfo && !auth.token) {
+      dispatch(refreshAuthToken());
+    } else if (types.length < 1) {
+      getTransactionTypes()
+        .then(data => {
+          dispatch(setTransactionTypes(data));
+        })
+        .catch(error => {
+          console.log("error", error);
+        });
+    }
+  }, [auth.userInfo, auth.token]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <button className="h-5" onClick={() => changeLanguage("en")}>
-          EN
-        </button>
-
-        <button onClick={() => changeLanguage("sin")}>Sinhala</button>
-      </header>
-    </div>
+    <>
+      <StrictMode>
+        <Suspense fallback={<Loading />}>
+          <Routes isLoggedIn={auth?.userInfo && auth?.token ? true : false} />
+          <AddTransactionModal />
+        </Suspense>
+      </StrictMode>
+    </>
   );
 }
 

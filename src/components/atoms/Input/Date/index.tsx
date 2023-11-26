@@ -1,16 +1,17 @@
-import { DatePicker, Form, FormInstance } from "antd";
+import { FC } from "react";
+
+import { DatePicker, Form } from "antd";
 import { Rule } from "antd/es/form";
-import React, { FC } from "react";
+
 interface DateProps {
-  form: FormInstance;
   name: string;
-  label: string;
+  label?: string;
   rules?: Rule[];
 }
 
 const Date: FC<DateProps> = ({ name, label, rules }) => {
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` },
+    { required: true, message: label ? `${label} is required` : "Required" }
   ];
   return (
     <Form.Item
@@ -18,7 +19,7 @@ const Date: FC<DateProps> = ({ name, label, rules }) => {
       name={name}
       rules={rules?.length ? [...initialRules, ...rules] : initialRules}
     >
-      <DatePicker />
+      <DatePicker format="YYYY-MM-DD" className=" w-full" />
     </Form.Item>
   );
 };

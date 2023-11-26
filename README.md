@@ -1,71 +1,44 @@
-# Project Title
+## Welcome! 👋
 
-A brief description of your project.
+ExpenseTracker -> Front End
 
-## Table of Contents
+## Overview
 
-- [About the Project](#about-the-project)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
-  - [Folder Structure](#folder-structure)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
+Built with
 
-<!-- ABOUT THE PROJECT -->
+- React
+- React-router-dom
+- Axios
+- typescript
+- antd
+- @reduxjs/toolkit
+- prettier
+- dayjs
+- react-redux
+- yup
+- i18n
+- tailwindcss
 
-## About The Project
+Project structure
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+1. ./src/routes -> routes
+2. ./src/@types -> i18n types
+3. ./src/services -> api calls
+4. ./src/images -> images
+5. ./src/components -> reusable components
+6. ./src/interfaces -> types
+7. ./src/helpers -> helper functions
+8. ./src/store -> global state management
 
-A brief description of your project.
+## Installation
 
-### Built With
+- Prerequisite
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- ...
+* Install node
+* typescript globally
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-What things you need to install the software and how to install them:
-
-- Node.js (version X.X.X)
-- Yarn (version X.X.X)
-
-### Installation
-
-1. Clone the repository.
-
-   ```bash
-   git clone https://github.com/your-username/your-project.git
-   ```
-
-   <!-- USAGE EXAMPLES -->
-
-   How to run the project and any additional details.
-
-- yarn start
-  Contact
-
-Your Name - email@example.com
-
-Project Link: https://github.com/your-username/your-repo
-
-<!-- ACKNOWLEDGEMENTS -->
-
-Acknowledgements
-
-    Choose an Open Source License
-    [GitHub Pages](https)
+1. save the file locally -> Clone the repository
+   [FrontEnd](https://github.com/Shameera17/MyTransactions)
+2. installation -> npm install or yarn install
+3. run the app -> npm run dev or yarn dev
+4. Visit [Backend](https://github.com/Shameera17/MyTransactionAPI) repository

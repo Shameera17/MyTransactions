@@ -1,22 +1,25 @@
 .App {
-  text-align: center;
+  height: "100%";
+  width: "100%";
+}
+.ant-menu > .ant-menu-item {
+  background-color: #d9d9d94d;
+}
+/* .ant-menu > .ant-menu-item:hover,
+.ant-menu > .ant-menu-submenu:hover, */
+.ant-menu > .ant-menu-item-active,
+.ant-menu > .ant-menu-submenu-active,
+/* .ant-menu > .ant-menu-item-open,
+.ant-menu > .ant-menu-submenu-open, */
+.ant-menu > .ant-menu-item-selected,
+.ant-menu > .ant-menu-submenu-selected {
+  color: #157afe;
+  background-color: #c9e0ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.custom-form-item .ant-form-item-control-input-content {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }

@@ -1,11 +1,12 @@
 import React from "react";
+
 import { Form, Input } from "antd";
 import { Rule } from "antd/lib/form";
-import { useForm } from "antd/lib/form/Form";
 
 interface TextAreaProps {
   name: string;
-  label: string;
+  label?: string;
+  placeholder?: string;
   rules?: Rule[];
   rows?: number;
 }
@@ -15,9 +16,10 @@ const TextArea: React.FC<TextAreaProps> = ({
   label,
   rules,
   rows = 4,
+  placeholder
 }) => {
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` },
+    { required: true, message: label ? `${label} is required` : "Required" }
   ];
   return (
     <Form.Item
@@ -25,7 +27,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       name={name}
       rules={rules?.length ? [...initialRules, ...rules] : initialRules}
     >
-      <Input.TextArea rows={rows} />
+      <Input.TextArea placeholder={placeholder} rows={rows} />
     </Form.Item>
   );
 };

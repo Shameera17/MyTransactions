@@ -1,0 +1,85 @@
+{
+  "login": {
+    "or-email": "or log in with email",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot password?",
+    "no-account": "Don't have an account?",
+    "signup": "Sign up"
+  },
+  "signup": {
+    "or-email": "or sign up with email",
+    "have-read": "I have read and agree to the ",
+    "terms": "Terms of Service",
+    "have-account": "Already have an account?",
+    "login": "Log In",
+    "title": "ලියාපදිංචි වන්න"
+  },
+  "signup-invitation": {
+    "message": "You're about to get on board using"
+  },
+  "forgot-password": {
+    "reset-password": "Reset Password",
+    "will-send-you-code": "We will send you a code to confirm password reset process",
+    "send-code": "Send Code",
+    "back-to-login": "Back to Login",
+    "title": "මුරපදය අමතක වුණා ද?",
+    "description": "කණගාටු නොවන්න, අපි ඔබට යළි පිහිටුවීමේ උපදෙස් එවන්නෙමු"
+  },
+  "reset-password": {
+    "create-new-password": "Create New Password",
+    "enter-verification-code": "Enter the verification code sent to your email and enter a new strong password",
+    "reset": "Reset",
+    "back-to-login": "Back to Login",
+    "success": "Successfully updated your password. Login to continue"
+  },
+  "verify-account": {
+    "congratulations": "Congratulations!",
+    "enter-verification": "Enter the verification code we just sent to",
+    "verify": "Verify",
+    "resend-code": "Resend Code",
+    "sending-code": "Sending verification code...",
+    "resend-success": "Successfully sent verification code to {{email}}"
+  },
+  "personal-info": {
+    "getting-started": "Getting Started",
+    "welcome": "Welcome! Let’s get things rolling"
+  },
+  "set-new-password": {
+    "description": "කරුණාකර ඔබගේ නව මුරපදය මෙහි ඇතුලත් කරන්න",
+    "title": "නව මුරපදය සකසන්න"
+  },
+  "signin": {
+    "signup": "ලියාපදිංචි වන්න",
+    "title": "පුරන්න",
+    "description": "වියදම් ට්රැකර් වෙත නැවත සාදරයෙන් පිළිගනිමු"
+  },
+  "password-reset-success": {
+    "title": "මුරපදය යළි පිහිටුවීම සාර්ථකයි!",
+    "description-1": "ඔබගේ මුරපදය සාර්ථකව නැවත සකස් කර ඇත.",
+    "description-2": "මැජික් ලෙස ලොග් වීමට පහත ක්ලික් කරන්න."
+  },
+  "dashboard": {
+    "title": "උපකරණ පුවරුව",
+    "all-income": "All Income",
+    "all-expenses": "All Expenses",
+    "month-carried": "{{month}} (Carried)",
+    "balance-total": "Balance Total",
+    "record-count": "{{count}} records",
+    "table-column": {
+      "item": "Item (description)",
+      "amount": "Amount",
+      "type": "Type",
+      "date": "Date",
+      "actions": "Actions"
+    }
+  },
+  "settings": {
+    "title": "සැකසුම්",
+    "upload-image": "Upload Image",
+    "general": "General",
+    "save-changes": "වෙනස්කම් සුරකින්න",
+    "change-password": "Change Password",
+    "delete": "Delete",
+    "delete-user-account": "Delete user account"
+  }
+}

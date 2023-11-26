@@ -1,0 +1,25 @@
+.title:where(.css-dev-only-do-not-override-12jzuas).ant-typography,
+div:where(.css-dev-only-do-not-override-12jzuas).ant-typography-h1,
+div:where(.css-dev-only-do-not-override-12jzuas).ant-typography-h1 > textarea,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography h1 {
+  margin-bottom: 0em;
+}
+.title:where(.css-dev-only-do-not-override-12jzuas).ant-typography
+  + h1.ant-typography,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography
+  + h2.ant-typography,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography
+  + h3.ant-typography,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography
+  + h4.ant-typography,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography
+  + h5.ant-typography {
+  margin-top: 0em;
+}
+
+.title:where(.css-dev-only-do-not-override-12jzuas).ant-typography,
+div:where(.css-dev-only-do-not-override-12jzuas).ant-typography-h1,
+div:where(.css-dev-only-do-not-override-12jzuas).ant-typography-h1 > textarea,
+:where(.css-dev-only-do-not-override-12jzuas).ant-typography h1 {
+  margin-bottom: 0em;
+}

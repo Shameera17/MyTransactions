@@ -1,6 +1,8 @@
 import React, { FC } from "react";
+
 import { Form, Input } from "antd";
 import { FormInstance, Rule } from "antd/es/form";
+
 interface EmailProps {
   form: FormInstance;
   name: string;
@@ -11,7 +13,7 @@ interface EmailProps {
 const Email: FC<EmailProps> = ({ name, label, rules }) => {
   const initialRules: Rule[] = [
     { required: true, message: `${label} is required` },
-    { type: "email", message: "Please enter a valid email address" },
+    { type: "email", message: "Please enter a valid email address" }
   ];
 
   return (

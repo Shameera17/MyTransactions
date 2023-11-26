@@ -10,5 +10,8 @@
     "max-len": "{{fieldName}} cannot include more than {{len}} characters",
     "email-not-found": "Email not found!",
     "field-required": "{{field}} is required!"
+  },
+  "alert": {
+    "delete-confirm": "Are you sure to delete this record?"
   }
 }

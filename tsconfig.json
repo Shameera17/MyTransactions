@@ -7,7 +7,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -17,16 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "typeRoots": ["src/@types", "./node_modules/@types"],
-    "baseUrl": ".",
-    "paths": {
-      "svg/*": ["src/svg/*"],
-      "components/*": ["src/components/*"],
-      "routes/*": ["src/routes/*"],
-      "interfaces/*": ["src/interfaces/*"],
-      "services/*": ["src/services/*"],
-      "utils/*": ["src/utils/*"],
-      "store/*": ["src/store/*"]
-    }
+    "baseUrl": "src"
   },
   "include": ["src"]
 }
