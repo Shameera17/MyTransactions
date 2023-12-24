@@ -1,43 +1,16 @@
-import React from "react";
-
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
 
+import {
+  contentStyle,
+  fontStyle,
+  footerStyle,
+  headerStyle,
+  screenStyle
+} from "../styles";
+
 const { Header, Footer, Content } = Layout;
-const screenStyle: React.CSSProperties = {
-  backgroundColor: "white"
-};
 
-const headerStyle: React.CSSProperties = {
-  color: "black",
-  height: 64,
-  paddingInline: 50,
-  lineHeight: "64px",
-  backgroundColor: "white"
-};
-
-const contentStyle: React.CSSProperties = {
-  textAlign: "center",
-  minHeight: 120,
-  lineHeight: "120px",
-  color: "#fff",
-  backgroundColor: "white",
-  overflow: "auto"
-};
-
-const fontStyle: React.CSSProperties = {
-  fontSize: "24px",
-  fontWeight: 600,
-  lineHeight: "24px",
-  letterSpacing: "0px",
-  textAlign: "left"
-};
-
-const footerStyle: React.CSSProperties = {
-  textAlign: "center",
-  color: "Grey",
-  backgroundColor: "white"
-};
 const OtherLayout = () => {
   return (
     <Layout style={screenStyle}>
@@ -51,7 +24,7 @@ const OtherLayout = () => {
           </span>
         </div>
       </Header>
-      <Content className="mx-auto " style={contentStyle}>
+      <Content className="mx-auto" style={contentStyle}>
         <Outlet />
       </Content>
       <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>

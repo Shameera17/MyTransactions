@@ -5,16 +5,12 @@ import { Outlet } from "react-router-dom";
 
 import { HeaderContent, SideBar } from "components/organisms";
 
+import { footerStyle } from "../styles";
 import "./style.css";
 
 const { Header, Content, Footer } = Wrapper;
 
 const Layout: React.FC = () => {
-  const footerStyle: React.CSSProperties = {
-    textAlign: "center",
-    color: "Grey",
-    backgroundColor: "white"
-  };
   return (
     <Wrapper id="wrapper" hasSider className=" h-screen">
       <SideBar />
