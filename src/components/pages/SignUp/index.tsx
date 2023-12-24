@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { register } from "services/user";
 
 import { Description, Title, showNotification } from "components/atoms";
-import { LayoutImageCard, SignUpForm } from "components/molecules";
+import { SignUpForm } from "components/molecules";
+
+import { ReactComponent as SignUpImage } from "../../../images/signUp.svg";
 
 const SignUp = () => {
   const { t } = useTranslation(["glossary"]);
@@ -12,16 +14,13 @@ const SignUp = () => {
   return (
     <div
       style={{
-        // position: "absolute",
-        // top: "50%",
-        left: "50%",
-        margin: "25px 25px 0 0",
         display: "flex",
-        gap: 4
+        alignItems: "center",
+        gap: 50
       }}
-      // className=" grid grid-cols-2 gap-4 content-center"
     >
-      <LayoutImageCard screen="signup" />
+      <SignUpImage x="20%" width="500" />
+
       <div className="flex flex-col justify-center ">
         <div
           style={{

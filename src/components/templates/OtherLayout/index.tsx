@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 
 const { Header, Footer, Content } = Layout;
 const screenStyle: React.CSSProperties = {
-  paddingTop: "32px",
   backgroundColor: "white"
 };
 
@@ -52,7 +51,7 @@ const OtherLayout = () => {
           </span>
         </div>
       </Header>
-      <Content className="mx-auto" style={contentStyle}>
+      <Content className="mx-auto " style={contentStyle}>
         <Outlet />
       </Content>
       <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>

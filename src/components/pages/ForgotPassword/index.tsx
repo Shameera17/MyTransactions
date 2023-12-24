@@ -46,7 +46,7 @@ const ForgotPassword = () => {
                 showNotification(
                   "error",
                   "Error",
-                  error.response.data || "Sign in failed! Please try again!"
+                  error?.response?.data || "Server error. Please try again!"
                 );
               });
           }}

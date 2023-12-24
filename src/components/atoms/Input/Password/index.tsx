@@ -9,11 +9,21 @@ interface PasswordProps {
   label: string;
   rules?: Rule[];
   size?: SizeType;
+  required?: boolean;
 }
 
-const Password: React.FC<PasswordProps> = ({ name, label, rules, size }) => {
+const Password: React.FC<PasswordProps> = ({
+  name,
+  label,
+  rules,
+  size,
+  required
+}) => {
   const initialRules: Rule[] = [
-    { required: true, message: `${label} is required` }
+    {
+      required: required !== undefined ? required : true,
+      message: `${label} is required`
+    }
   ];
   return (
     <Form.Item
