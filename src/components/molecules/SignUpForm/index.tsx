@@ -39,7 +39,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
       onFinish={handleFinish}
       onFinishFailed={handleFinishFailed}
     >
-      <div className="grid desktop:grid-cols-2 laptop:grid-cols-2 desktop:gap-2 laptop:gap-2 tablet:grid-cols-1">
+      <div className="grid grid-cols-2 gap-2">
         <Text name={"firstName"} size="large" label={t("form.first-Name")} />
         <Text name={"lastName"} size="large" label={t("form.last-Name")} />
       </div>

@@ -1,26 +1,19 @@
+import useScreenSize from "helpers/useScreenSize";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { register } from "services/user";
 
 import { Description, Title, showNotification } from "components/atoms";
-import { SignUpForm } from "components/molecules";
-
-import { ReactComponent as SignUpImage } from "../../../images/signUp.svg";
+import { LayoutImageCard, SignUpForm } from "components/molecules";
 
 const SignUp = () => {
   const { t } = useTranslation(["glossary"]);
   const navigate = useNavigate();
+  const screenSize = useScreenSize();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 50
-      }}
-    >
-      <SignUpImage x="20%" width="500" />
-
+    <div className="h-full grid laptop:grid-cols-2 desktop:grid-cols-2 tablet:grid-cols-2  gap-4 content-center">
+      {screenSize.width >= 640 && <LayoutImageCard screen="signup" />}
       <div className="flex flex-col justify-center ">
         <div
           style={{
