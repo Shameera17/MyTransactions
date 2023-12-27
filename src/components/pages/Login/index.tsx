@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import useScreenSize from "helpers/useScreenSize";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -14,16 +15,16 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userInfo, token } = useSelector((state: RootState) => state.auth);
-
+  const screenSize = useScreenSize();
   useEffect(() => {
     if (userInfo?.email && token) {
       navigate("/app/dashboard");
     }
-  }, [userInfo, token]);
+  }, [userInfo, token, navigate]);
   const { t } = useTranslation(["glossary"]);
   return (
-    <div className=" grid grid-cols-2 gap-4 content-center">
-      <LayoutImageCard screen="signin" />
+    <div className="h-full grid laptop:grid-cols-2 desktop:grid-cols-2 tablet:grid-cols-2  gap-4 content-center">
+      {screenSize.width >= 640 && <LayoutImageCard screen="signin" />}
       <div className="flex flex-col justify-center ">
         <div
           style={{
@@ -32,6 +33,7 @@ const Login = () => {
         >
           <Title title={t("signin.title")} />
           <Description level={1} description={t("signin.description")} />
+          {/* {screenSize.width < 600 && <LayoutImageCard screen="signin" />} */}
         </div>
         <LoginForm
           onSubmit={values => {

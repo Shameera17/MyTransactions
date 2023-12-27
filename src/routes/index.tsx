@@ -6,7 +6,6 @@ import {
   createBrowserRouter
 } from "react-router-dom";
 
-const Home = React.lazy(() => import("components/pages/Home"));
 const Dashboard = React.lazy(() => import("components/pages/Dashboard"));
 const Login = React.lazy(() => import("components/pages/Login"));
 const PageNotFound = React.lazy(() => import("components/pages/PageNotFound"));
@@ -37,7 +36,14 @@ const Routes = (props: { isLoggedIn: boolean }) => {
       element: <OtherLayout />,
       errorElement: <PageNotFound />,
       children: [
-        { path: "/", element: <Home /> },
+        {
+          path: "/",
+          element: props.isLoggedIn ? (
+            <Navigate to="/app/dashboard" />
+          ) : (
+            <Navigate to="/signin" />
+          )
+        },
         { path: "signin", element: <Login /> },
         { path: "signup", element: <SignUp /> },
         { path: "forgotpassword", element: <ForgotPassword /> },

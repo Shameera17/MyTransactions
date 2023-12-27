@@ -13,7 +13,7 @@ const { Header, Footer, Content } = Layout;
 
 const OtherLayout = () => {
   return (
-    <Layout style={screenStyle}>
+    <Layout style={screenStyle} className=" tablet:h-screen">
       <Header style={headerStyle}>
         <div className="demo-logo-vertical p-1 ">
           <span style={fontStyle} className=" text-crayola font-medium">
@@ -24,7 +24,10 @@ const OtherLayout = () => {
           </span>
         </div>
       </Header>
-      <Content className="mx-auto" style={contentStyle}>
+      <Content
+        className="mx-auto max-tablet:mx-4 max-laptop:mx-10 max-desktop:mx-32 "
+        style={contentStyle}
+      >
         <Outlet />
       </Content>
       <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>

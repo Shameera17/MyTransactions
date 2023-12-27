@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     if (userInfo && token) navigate("/app/dashboard");
-  }, [userInfo, token]);
+  }, [userInfo, token, navigate]);
 
   return (
     <div className="grid grid-cols-2">
