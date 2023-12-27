@@ -13,7 +13,7 @@ const { Header, Footer, Content } = Layout;
 
 const OtherLayout = () => {
   return (
-    <Layout style={screenStyle} className=" tablet:h-screen">
+    <Layout style={screenStyle} className=" h-screen">
       <Header style={headerStyle}>
         <div className="demo-logo-vertical p-1 ">
           <span style={fontStyle} className=" text-crayola font-medium">
