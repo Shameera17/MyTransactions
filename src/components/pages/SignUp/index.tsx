@@ -45,7 +45,7 @@ const SignUp = () => {
                 showNotification(
                   "error",
                   "Error",
-                  error.response.data ||
+                  error.response.data ??
                     "Account creation failed! Please try again!"
                 );
               });

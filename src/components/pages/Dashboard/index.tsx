@@ -34,8 +34,8 @@ const Dashboard = () => {
     getdata(
       userInfo?.id!,
       filterCriteria.status,
-      filterCriteria.month || new Date().getMonth() + 1,
-      filterCriteria.year || new Date().getFullYear(),
+      filterCriteria.month ?? new Date().getMonth() + 1,
+      filterCriteria.year ?? new Date().getFullYear(),
       token!
     )
       .then(data => {
@@ -45,13 +45,13 @@ const Dashboard = () => {
         showNotification(
           "error",
           "Error",
-          error?.response?.data || "Please refresh page!"
+          error?.response?.data ?? "Please refresh page!"
         );
       });
     getStatdata(
       userInfo?.id!,
-      filterCriteria.month || new Date().getMonth() + 1,
-      filterCriteria.year || new Date().getFullYear(),
+      filterCriteria.month ?? new Date().getMonth() + 1,
+      filterCriteria.year ?? new Date().getFullYear(),
       token!
     )
       .then(data => {
@@ -61,7 +61,7 @@ const Dashboard = () => {
         showNotification(
           "error",
           "Error",
-          error?.response?.data || "Please refresh page!"
+          error?.response?.data ?? "Please refresh page!"
         );
       });
     setloading(false);
@@ -115,7 +115,7 @@ const Dashboard = () => {
                   showNotification(
                     "warning",
                     "Success",
-                    result || "Record removed successfully!"
+                    result ?? "Record removed successfully!"
                   );
                   dispatch(setRefresh());
                 })
@@ -123,7 +123,7 @@ const Dashboard = () => {
                   showNotification(
                     "error",
                     "Error",
-                    error?.response?.data || "Please refresh page!"
+                    error?.response?.data ?? "Please refresh page!"
                   );
                 })
             }
@@ -140,27 +140,27 @@ const Dashboard = () => {
         <StatBox
           type={"income"}
           title={"All income"}
-          amount={stats?.totalIncome || 0}
-          count={stats?.incomeCount || 0}
+          amount={stats?.totalIncome ?? 0}
+          count={stats?.incomeCount ?? 0}
         />
         <StatBox
           type={"expense"}
           title={"All Expense"}
-          amount={stats?.totalExpenses || 0}
-          count={stats?.expenseCount || 0}
+          amount={stats?.totalExpenses ?? 0}
+          count={stats?.expenseCount ?? 0}
         />
         <StatBox
           type={"carried"}
           title={`${dayjs()
             .month(filterCriteria.month - 2)
             .format("MMMM")} (Carried)`}
-          amount={stats?.previousIncomes || 0}
-          count={stats?.previousIncomeCount || 0}
+          amount={stats?.previousIncomes ?? 0}
+          count={stats?.previousIncomeCount ?? 0}
         />
         <StatBox
           type={Number(stats?.RemainingBalance!) > 0 ? "bal" : "expense"}
           title={"Balance Total"}
-          amount={Number(stats?.RemainingBalance!) || 0}
+          amount={Number(stats?.RemainingBalance!) ?? 0}
           status={
             !stats?.totalExpenses! && !stats?.totalExpenses!
               ? "0 balance"

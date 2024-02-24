@@ -42,8 +42,8 @@ const LoggedInUser = () => {
             letterSpacing: "0px",
             textAlign: "left"
           }}
-        >{`${userInfo?.firstName || ""} ${
-          (userInfo && userInfo?.lastName) || ""
+        >{`${userInfo?.firstName ?? ""} ${
+          (userInfo && userInfo?.lastName) ?? ""
         }`}</p>
 
         <LinkSentence

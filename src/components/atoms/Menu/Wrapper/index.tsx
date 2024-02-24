@@ -12,7 +12,7 @@ const Wrapper = ({ theme, height, children, className }: WrapperProps) => {
     <Menu
       className={className}
       id="Menu"
-      theme={theme || "light"}
+      theme={theme ?? "light"}
       style={{
         height: height,
         border: "none"

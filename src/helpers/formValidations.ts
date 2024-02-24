@@ -1,8 +1,8 @@
 export const validateConfirmPassword = ({ getFieldValue }: any) => ({
   validator(_: any, value: any) {
     if (
-      !value ||
-      getFieldValue("password") ||
+      !value ??
+      getFieldValue("password") ??
       getFieldValue("newPassword") === value
     ) {
       return Promise.resolve();

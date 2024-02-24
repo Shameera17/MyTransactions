@@ -18,13 +18,13 @@ const RadioButton: FC<RadioButtonProps> = ({ name, id }) => {
     <Form.Item
       rules={[{ required: true, message: "Please select an option" }]}
       name={name}
-      initialValue={id || list[0].id}
+      initialValue={id ?? list[0].id}
     >
       <Radio.Group
         style={{
           width: "100%"
         }}
-        defaultValue={id || list[0].id}
+        defaultValue={id ?? list[0].id}
         buttonStyle="solid"
       >
         {list.map(type => {

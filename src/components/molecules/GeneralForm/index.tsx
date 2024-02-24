@@ -53,7 +53,7 @@ const GeneralForm = () => {
                 showNotification(
                   "error",
                   "Error",
-                  error.response.data || "Please try again!"
+                  error.response.data ?? "Please try again!"
                 );
               });
           });

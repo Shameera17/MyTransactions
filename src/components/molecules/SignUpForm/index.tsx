@@ -59,7 +59,7 @@ const SignUpForm = ({ onSubmit, isLoading = false }: SignUpFormProps) => {
           { required: true, message: "Please confirm your password." },
           ({ getFieldValue }: any) => ({
             validator(_: any, value: any) {
-              if (!value || getFieldValue("password") === value) {
+              if (!value ?? getFieldValue("password") === value) {
                 return Promise.resolve();
               }
               return Promise.reject(new Error("Passwords do not match."));

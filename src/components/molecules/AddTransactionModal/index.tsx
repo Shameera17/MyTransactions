@@ -37,7 +37,7 @@ const AddTransactionModal = () => {
             showNotification(
               "error",
               "Error",
-              error.response.data || "Please try again!"
+              error.response.data ?? "Please try again!"
             );
           });
     });
@@ -113,7 +113,7 @@ const AddTransactionModal = () => {
                     showNotification(
                       "success",
                       "Success",
-                      result || "Transaction created!"
+                      result ?? "Transaction created!"
                     );
                     form.resetFields();
                     dispatch(viewModal(false));
@@ -123,7 +123,7 @@ const AddTransactionModal = () => {
                     showNotification(
                       "error",
                       "Error",
-                      error.response.data || "Please try again!"
+                      error.response.data ?? "Please try again!"
                     );
                   });
               }}
