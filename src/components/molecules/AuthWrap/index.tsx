@@ -5,7 +5,7 @@ interface AuthWrapProps {
   children: React.ReactNode;
 }
 
-const AuthWrap: React.FC<AuthWrapProps> = ({ children, width }) => {
+const AuthWrap = ({ children, width }: AuthWrapProps) => {
   return (
     <div className="flex justify-center align-middle">
       <div

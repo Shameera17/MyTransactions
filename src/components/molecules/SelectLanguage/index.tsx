@@ -1,7 +1,7 @@
 import { Button, Dropdown, MenuProps } from "antd";
 import { useTranslation } from "react-i18next";
 
-const SelectLanguage: React.FC = () => {
+const SelectLanguage = () => {
   const { t, i18n } = useTranslation();
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);

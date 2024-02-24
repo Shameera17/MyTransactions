@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
@@ -10,7 +10,7 @@ import { setToken, setUserInfo } from "store/reducers/auth.reducer";
 
 import { PrimaryButton, Text, showNotification } from "components/atoms";
 
-const GeneralForm: React.FC = () => {
+const GeneralForm = () => {
   const [form] = useForm();
   const { t } = useTranslation(["common", "glossary", "validations"]);
   const { userInfo, token } = useSelector((state: RootState) => state.auth);

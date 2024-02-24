@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
@@ -18,10 +16,7 @@ interface LoginFormProps {
   isLoading?: boolean;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({
-  onSubmit,
-  isLoading = false
-}) => {
+const LoginForm = ({ onSubmit, isLoading = false }: LoginFormProps) => {
   const [form] = useForm();
   const { t } = useTranslation(["validations", "common", "glossary"]);
 

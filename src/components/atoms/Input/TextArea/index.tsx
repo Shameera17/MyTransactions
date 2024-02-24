@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form, Input } from "antd";
 import { Rule } from "antd/lib/form";
 
@@ -11,13 +9,13 @@ interface TextAreaProps {
   rows?: number;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({
+const TextArea = ({
   name,
   label,
   rules,
   rows = 4,
   placeholder
-}) => {
+}: TextAreaProps) => {
   const initialRules: Rule[] = [
     { required: true, message: label ? `${label} is required` : "Required" }
   ];

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Card } from "antd";
 
 import { ReactComponent as IncomeImage } from "../../../../images/income.svg";
@@ -10,7 +8,7 @@ interface LayoutImageCardProps {
   screen: "signup" | "signin" | "Home";
   size?: "small" | "large";
 }
-const LayoutImageCard: React.FC<LayoutImageCardProps> = ({ screen, size }) => {
+const LayoutImageCard = ({ screen, size }: LayoutImageCardProps) => {
   return (
     <div className="flex items-stretch justify-center ">
       <Card

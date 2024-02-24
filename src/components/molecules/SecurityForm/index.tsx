@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { validateConfirmPassword } from "helpers/formValidations";
@@ -11,7 +9,7 @@ interface SecurityFormProps {
   onSubmit: (values: any, reset: any) => void;
 }
 
-const SecurityForm: React.FC<SecurityFormProps> = ({ onSubmit }) => {
+const SecurityForm = ({ onSubmit }: SecurityFormProps) => {
   const [form] = useForm();
   const { t } = useTranslation();
 

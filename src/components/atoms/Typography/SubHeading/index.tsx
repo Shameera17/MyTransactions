@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Typography } from "antd";
 
 interface SubHeadingProps {
@@ -7,11 +5,7 @@ interface SubHeadingProps {
   className?: string;
   level?: number;
 }
-const SubHeading: React.FC<SubHeadingProps> = ({
-  subHeading,
-  className,
-  level
-}) => {
+const SubHeading = ({ subHeading, className }: SubHeadingProps) => {
   const { Paragraph } = Typography;
 
   return (
@@ -20,8 +14,6 @@ const SubHeading: React.FC<SubHeadingProps> = ({
       style={{
         fontSize: "13px",
         fontWeight: 500,
-        // lineHeight: "19px",
-        // letterSpacing: "0px",
         textAlign: "left"
       }}
     >

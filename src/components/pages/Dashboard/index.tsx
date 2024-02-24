@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Space, Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
@@ -18,7 +18,7 @@ import StatBox from "components/molecules/StatBox";
 
 import "./style.css";
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const dispatch = useDispatch();
 
   const { transactions, filterCriteria, refresh } = useSelector(

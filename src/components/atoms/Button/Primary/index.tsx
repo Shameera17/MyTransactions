@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Button } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 
@@ -15,7 +13,7 @@ interface PrimaryButtonProps {
   htmlType?: "button" | "submit" | "reset";
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({
+const PrimaryButton = ({
   onClick,
   disabled = false,
   buttonName,
@@ -25,7 +23,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   height,
   ghost,
   htmlType
-}) => {
+}: PrimaryButtonProps) => {
   return (
     <Button
       htmlType={htmlType}

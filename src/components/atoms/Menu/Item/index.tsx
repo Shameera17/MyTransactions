@@ -6,7 +6,7 @@ interface ItemProps {
   icon?: React.ReactNode;
 }
 
-const Item: React.FC<ItemProps> = ({ title, className, icon }) => {
+const Item = ({ title, className, icon }: ItemProps) => {
   return (
     <MenuItem
       icon={icon}

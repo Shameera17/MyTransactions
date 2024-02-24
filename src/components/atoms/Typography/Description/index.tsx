@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Typography } from "antd";
 
 interface DescriptionProps {
@@ -7,11 +5,11 @@ interface DescriptionProps {
   className?: string;
   level?: number;
 }
-export const Description: React.FC<DescriptionProps> = ({
+export const Description = ({
   description,
   className,
   level
-}) => {
+}: DescriptionProps) => {
   const { Paragraph } = Typography;
 
   return (
@@ -30,11 +28,11 @@ export const Description: React.FC<DescriptionProps> = ({
     </Paragraph>
   );
 };
-export const CardDescription: React.FC<DescriptionProps> = ({
+export const CardDescription = ({
   description,
   className,
   level
-}) => {
+}: DescriptionProps) => {
   const { Paragraph } = Typography;
 
   return (

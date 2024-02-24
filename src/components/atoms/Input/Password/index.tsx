@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form, Input } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 import { Rule } from "antd/lib/form";
@@ -12,13 +10,7 @@ interface PasswordProps {
   required?: boolean;
 }
 
-const Password: React.FC<PasswordProps> = ({
-  name,
-  label,
-  rules,
-  size,
-  required
-}) => {
+const Password = ({ name, label, rules, size, required }: PasswordProps) => {
   const initialRules: Rule[] = [
     {
       required: required !== undefined ? required : true,

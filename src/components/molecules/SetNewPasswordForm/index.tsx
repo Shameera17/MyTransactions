@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
@@ -12,10 +10,10 @@ interface SetNewPasswordFormProps {
   isLoading?: boolean;
 }
 
-const SetNewPasswordForm: React.FC<SetNewPasswordFormProps> = ({
+const SetNewPasswordForm = ({
   onSubmit,
   isLoading = false
-}) => {
+}: SetNewPasswordFormProps) => {
   const [form] = useForm();
   const { t } = useTranslation(["validations", "common", "glossary"]);
   const handleFinish = (values: any) => {

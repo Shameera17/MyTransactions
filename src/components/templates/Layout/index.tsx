@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Layout as Wrapper } from "antd";
 import { Outlet } from "react-router-dom";
 
@@ -9,7 +7,7 @@ import "./style.css";
 
 const { Header, Content, Footer } = Wrapper;
 
-const Layout: React.FC = () => {
+const Layout = () => {
   return (
     <Wrapper id="wrapper" hasSider className=" h-screen">
       <SideBar />

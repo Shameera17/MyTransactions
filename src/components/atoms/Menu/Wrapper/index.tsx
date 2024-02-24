@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Menu, MenuTheme } from "antd";
 
 interface WrapperProps {
@@ -9,12 +7,7 @@ interface WrapperProps {
   children: any;
 }
 
-const Wrapper: React.FC<WrapperProps> = ({
-  theme,
-  height,
-  children,
-  className
-}) => {
+const Wrapper = ({ theme, height, children, className }: WrapperProps) => {
   return (
     <Menu
       className={className}

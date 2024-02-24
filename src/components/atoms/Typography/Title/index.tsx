@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Typography } from "antd";
 
 import "./style.css";
@@ -8,7 +6,7 @@ interface TitleProps {
   title: string;
   className?: string;
 }
-export const Title: React.FC<TitleProps> = ({ title }) => {
+export const Title = ({ title }: TitleProps) => {
   const { Title } = Typography;
 
   return (
@@ -25,7 +23,7 @@ export const Title: React.FC<TitleProps> = ({ title }) => {
     </Title>
   );
 };
-export const TitleMain: React.FC<TitleProps> = ({ title, className }) => {
+export const TitleMain = ({ title, className }: TitleProps) => {
   const { Paragraph } = Typography;
 
   return (
@@ -46,7 +44,7 @@ export const TitleMain: React.FC<TitleProps> = ({ title, className }) => {
     </Paragraph>
   );
 };
-export const TitleCard: React.FC<TitleProps> = ({ title, className }) => {
+export const TitleCard = ({ title }: TitleProps) => {
   const { Title } = Typography;
 
   return (

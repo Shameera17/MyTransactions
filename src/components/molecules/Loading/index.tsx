@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const Loading: React.FC = () => {
+const Loading = () => {
   return (
     <div className=" h-screen w-screen flex justify-center align-middle content-center">
       {/* <Spin

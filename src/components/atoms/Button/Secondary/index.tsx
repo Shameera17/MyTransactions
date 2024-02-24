@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Button } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 
@@ -14,7 +12,7 @@ interface SecondaryButtonProps {
   ghost?: boolean;
 }
 
-const SecondaryButton: React.FC<SecondaryButtonProps> = ({
+const SecondaryButton = ({
   onClick,
   disabled = false,
   buttonName,
@@ -23,7 +21,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   width,
   height,
   ghost
-}) => {
+}: SecondaryButtonProps) => {
   return (
     <Button
       size={size}

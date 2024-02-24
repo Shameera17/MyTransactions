@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Typography } from "antd";
 
 interface LinkSentenceProps {
@@ -8,12 +6,12 @@ interface LinkSentenceProps {
   level?: number;
   onClick?: () => void;
 }
-const LinkSentence: React.FC<LinkSentenceProps> = ({
+const LinkSentence = ({
   description,
   className,
   level,
   onClick
-}) => {
+}: LinkSentenceProps) => {
   const { Link } = Typography;
 
   return (

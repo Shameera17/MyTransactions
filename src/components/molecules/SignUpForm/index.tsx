@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form } from "antd";
 import { useForm } from "antd/lib/form/Form";
 import { useTranslation } from "react-i18next";
@@ -18,10 +16,7 @@ interface SignUpFormProps {
   isLoading?: boolean;
 }
 
-const SignUpForm: React.FC<SignUpFormProps> = ({
-  onSubmit,
-  isLoading = false
-}) => {
+const SignUpForm = ({ onSubmit, isLoading = false }: SignUpFormProps) => {
   const [form] = useForm();
   const { t } = useTranslation(["common", "glossary", "validations"]);
   const handleFinish = (values: any) => {

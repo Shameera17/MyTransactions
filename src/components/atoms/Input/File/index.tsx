@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form, Upload } from "antd";
 import { Rule } from "antd/lib/form";
 
@@ -9,7 +7,7 @@ interface FileInputProps {
   rules?: Rule[];
 }
 
-const FileInput: React.FC<FileInputProps> = ({ name, label, rules }) => {
+const FileInput = ({ name, label, rules }: FileInputProps) => {
   const beforeUpload = (file: File) => {
     // Add custom file validation logic here if needed
     return true;

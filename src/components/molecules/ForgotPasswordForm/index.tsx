@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Form, FormInstance } from "antd";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +9,7 @@ interface ForgotPasswordFormProps {
   form: FormInstance<any>;
 }
 
-const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
-  onSubmit,
-  form
-}) => {
+const ForgotPasswordForm = ({ onSubmit, form }: ForgotPasswordFormProps) => {
   const { t } = useTranslation(["validations", "common", "glossary"]);
   const handleFinish = (values: any) => {
     form.validateFields().then(() => {
