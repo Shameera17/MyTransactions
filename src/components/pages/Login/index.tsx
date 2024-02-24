@@ -23,7 +23,7 @@ const Login = () => {
   }, [userInfo, token, navigate]);
   const { t } = useTranslation(["glossary"]);
   return (
-    <div className="h-full grid laptop:grid-cols-2 desktop:grid-cols-2 tablet:grid-cols-2  gap-4 content-center">
+    <div className="h-full grid laptop:grid-cols-2 desktop:grid-cols-2 tablet:grid-cols-2  gap-4  ">
       {screenSize.width >= 640 && <LayoutImageCard screen="signin" />}
       <div className="flex flex-col justify-center ">
         <div
@@ -33,7 +33,9 @@ const Login = () => {
         >
           <Title title={t("signin.title")} />
           <Description level={1} description={t("signin.description")} />
-          {/* {screenSize.width < 600 && <LayoutImageCard screen="signin" />} */}
+          {screenSize.width < 640 && (
+            <LayoutImageCard size="small" screen="signin" />
+          )}
         </div>
         <LoginForm
           onSubmit={values => {

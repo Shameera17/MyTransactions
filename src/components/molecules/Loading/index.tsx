@@ -1,11 +1,14 @@
-import { Spin } from "antd";
+import "./styles.css";
 
 const Loading: React.FC = () => {
   return (
     <div className=" h-screen w-screen flex justify-center align-middle content-center">
-      <Spin tip="Loading" size="large">
-        <div className="content" />
-      </Spin>
+      {/* <Spin
+        className="multi-color-spinner"
+        tip="Loading"
+        size="large"
+        indicator={<LoadingOutlined style={{ fontSize: 60 }} />}
+      /> */}
     </div>
   );
 };

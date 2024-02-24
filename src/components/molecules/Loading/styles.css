@@ -1,0 +1,22 @@
+@keyframes spin {
+  0%,
+  25% {
+    color: red;
+  }
+  25%,
+  50% {
+    color: yellow;
+  }
+  50%,
+  75% {
+    color: blue;
+  }
+  75%,
+  100% {
+    color: green;
+  }
+}
+
+.multi-color-spinner {
+  animation: spin 2s linear infinite;
+}

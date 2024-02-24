@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 
 import { HeaderContent, SideBar } from "components/organisms";
 
-import { footerStyle } from "../styles";
 import "./style.css";
 
 const { Header, Content, Footer } = Wrapper;
@@ -22,7 +21,7 @@ const Layout: React.FC = () => {
           <HeaderContent />
         </Header>
         <Content
-          className="py-9 scrollable-element"
+          className="py-9 mb-2 scrollable-element"
           style={{
             marginLeft: "18px",
             overflow: "auto"
@@ -30,7 +29,7 @@ const Layout: React.FC = () => {
         >
           <Outlet />
         </Content>
-        <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer>
+        {/* <Footer style={footerStyle}>© 2023 ALL RIGHTS RESERVED</Footer> */}
       </Wrapper>
     </Wrapper>
   );

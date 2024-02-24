@@ -8,8 +8,9 @@ import { ReactComponent as SignUpImage } from "../../../../images/signUp.svg";
 
 interface LayoutImageCardProps {
   screen: "signup" | "signin" | "Home";
+  size?: "small" | "large";
 }
-const LayoutImageCard: React.FC<LayoutImageCardProps> = ({ screen }) => {
+const LayoutImageCard: React.FC<LayoutImageCardProps> = ({ screen, size }) => {
   return (
     <div className="flex items-stretch justify-center ">
       <Card
@@ -22,11 +23,11 @@ const LayoutImageCard: React.FC<LayoutImageCardProps> = ({ screen }) => {
         }}
         cover={
           screen === "signup" ? (
-            <SignUpImage />
+            <SignUpImage height={"300px"} />
           ) : screen === "Home" ? (
             <IncomeImage />
           ) : (
-            <SignInImage />
+            <SignInImage height={size === "small" ? "200px" : "100%"} />
           )
         }
         bodyStyle={{
