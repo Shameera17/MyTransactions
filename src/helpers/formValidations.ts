@@ -1,12 +1,9 @@
 export const validateConfirmPassword = ({ getFieldValue }: any) => ({
   validator(_: any, value: any) {
-    if (
-      !value ??
-      getFieldValue("password") ??
-      getFieldValue("newPassword") === value
-    ) {
+    if (getFieldValue("newPassword") === value) {
       return Promise.resolve();
+    } else {
+      return Promise.reject(new Error("Passwords do not match."));
     }
-    return Promise.reject(new Error("Passwords do not match."));
   }
 });
